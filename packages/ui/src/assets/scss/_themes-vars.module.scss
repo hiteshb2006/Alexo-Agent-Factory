@@ -1,0 +1,179 @@
+// ==============================|| AGENTFACTORY BRAND PALETTE ||============================== //
+// Midnight Navy #0B1220 · Charcoal #1F2937 · Electric Teal #14D8C4
+// Vivid Violet #7C3AED · Coral Accent #FF6B6B · Cloud #F5F7FB
+
+// paper & background
+$paper: #ffffff;
+
+// primary (Vivid Violet)
+$primaryLight: #f1eafe;
+$primaryMain: #7c3aed;
+$primaryDark: #6d28d9;
+$primary200: #c4b5fd;
+$primary800: #5b21b6;
+
+// secondary (Electric Teal)
+$secondaryLight: #e2fbf8;
+$secondaryMain: #14d8c4;
+$secondaryDark: #0c9f91;
+$secondary200: #8cefe4;
+$secondary800: #087a70;
+
+// success Colors
+$successLight: #d5f8e6;
+$success200: #6ee7b7;
+$successMain: #10b981;
+$successDark: #059669;
+
+// error (Coral Accent)
+$errorLight: #ffe3e3;
+$errorMain: #ff6b6b;
+$errorDark: #e03e3e;
+
+// orange
+$orangeLight: #fff0eb;
+$orangeMain: #ffa38f;
+$orangeDark: #e8553f;
+
+// teal
+$tealLight: #8cefe4;
+$tealMain: #14d8c4;
+$tealDark: #0c9f91;
+
+// warning
+$warningLight: #fff7e0;
+$warningMain: #ffd166;
+$warningDark: #f5a524;
+
+// grey (Cloud → Midnight Navy)
+$grey50: #f5f7fb;
+$grey100: #eef1f7;
+$grey200: #e4e8f0;
+$grey300: #d3d9e4;
+$grey400: #b4bccb;
+$grey500: #8a94a8;
+$grey600: #5b6478;
+$grey700: #3d4657;
+$grey900: #0b1220;
+
+// transparent
+$transparent: #ffffff00;
+
+// ==============================|| DARK THEME VARIANTS ||============================== //
+
+// paper & background (Midnight Navy)
+$darkBackground: #0b1220;
+$darkPaper: #0b1220;
+
+// dark 800 & 900
+$darkLevel1: #1f2937; // level 1 (Charcoal)
+$darkLevel2: #172033; // level 2
+
+// primary dark
+$darkPrimaryLight: #121b2e;
+$darkPrimaryMain: #121b2e;
+$darkPrimaryDark: #0b1220;
+$darkPrimary200: #cdd5ea;
+$darkPrimary800: #1f2937;
+
+// secondary dark
+$darkSecondaryLight: #2b2456;
+$darkSecondaryMain: #2ee6d3;
+$darkSecondaryDark: #ffffff;
+$darkSecondary200: #1f2937;
+$darkSecondary800: #6d28d9;
+
+// text variants
+$darkTextTitle: #e6eaf5;
+$darkTextPrimary: #c6cfe6;
+$darkTextSecondary: #8a96b8;
+
+// ==============================|| JAVASCRIPT ||============================== //
+
+:export {
+    // paper & background
+    paper: $paper;
+
+    // primary
+    primaryLight: $primaryLight;
+    primary200: $primary200;
+    primaryMain: $primaryMain;
+    primaryDark: $primaryDark;
+    primary800: $primary800;
+
+    // secondary
+    secondaryLight: $secondaryLight;
+    secondary200: $secondary200;
+    secondaryMain: $secondaryMain;
+    secondaryDark: $secondaryDark;
+    secondary800: $secondary800;
+
+    // success
+    successLight: $successLight;
+    success200: $success200;
+    successMain: $successMain;
+    successDark: $successDark;
+
+    // error
+    errorLight: $errorLight;
+    errorMain: $errorMain;
+    errorDark: $errorDark;
+
+    // orange
+    orangeLight: $orangeLight;
+    orangeMain: $orangeMain;
+    orangeDark: $orangeDark;
+
+    // orange
+    tealLight: $tealLight;
+    tealMain: $tealMain;
+    tealDark: $tealDark;
+
+    // warning
+    warningLight: $warningLight;
+    warningMain: $warningMain;
+    warningDark: $warningDark;
+
+    // grey
+    grey50: $grey50;
+    grey100: $grey100;
+    grey200: $grey200;
+    grey300: $grey300;
+    grey400: $grey400;
+    grey500: $grey500;
+    grey600: $grey600;
+    grey700: $grey700;
+    grey900: $grey900;
+
+    // ==============================|| DARK THEME VARIANTS ||============================== //
+
+    // paper & background
+    darkPaper: $darkPaper;
+    darkBackground: $darkBackground;
+
+    // dark 800 & 900
+    darkLevel1: $darkLevel1;
+    darkLevel2: $darkLevel2;
+
+    // text variants
+    darkTextTitle: $darkTextTitle;
+    darkTextPrimary: $darkTextPrimary;
+    darkTextSecondary: $darkTextSecondary;
+
+    // primary dark
+    darkPrimaryLight: $darkPrimaryLight;
+    darkPrimaryMain: $darkPrimaryMain;
+    darkPrimaryDark: $darkPrimaryDark;
+    darkPrimary200: $darkPrimary200;
+    darkPrimary800: $darkPrimary800;
+
+    // secondary dark
+    darkSecondaryLight: $darkSecondaryLight;
+    darkSecondaryMain: $darkSecondaryMain;
+    darkSecondaryDark: $darkSecondaryDark;
+    darkSecondary200: $darkSecondary200;
+    darkSecondary800: $darkSecondary800;
+
+    // transparent
+    transparent: $transparent;
+}

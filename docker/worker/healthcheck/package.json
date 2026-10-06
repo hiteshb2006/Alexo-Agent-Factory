@@ -1,0 +1,13 @@
+{
+    "name": "agentfactory-worker-healthcheck",
+    "version": "1.0.0",
+    "description": "Simple healthcheck server for AgentFactory worker",
+    "main": "healthcheck.js",
+    "private": true,
+    "scripts": {
+        "start": "node healthcheck.js"
+    },
+    "dependencies": {
+        "express": "^4.19.2"
+    }
+}
