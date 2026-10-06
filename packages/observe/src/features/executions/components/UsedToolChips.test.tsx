@@ -38,19 +38,19 @@ describe('UsedToolChips', () => {
     })
 
     it('flags an errored tool with red border + red text via the error palette', () => {
-        // `error.main` resolves to #f44336 / rgb(244, 67, 54). jsdom normalizes
+        // `error.main` resolves to #ff6b6b / rgb(244, 67, 54). jsdom normalizes
         // sx-based `color` to rgb() but keeps inline `borderColor` as the hex.
         renderWithTheme(<UsedToolChips tools={[{ tool: 'bad_tool', error: 'boom' }]} />)
         const chip = screen.getByText('bad_tool').closest('.MuiChip-root') as HTMLElement
         const styles = getComputedStyle(chip)
-        expect(styles.color).toMatch(/rgb\(244,\s*67,\s*54\)|#f44336/i)
-        expect(styles.borderColor).toMatch(/rgb\(244,\s*67,\s*54\)|#f44336/i)
+        expect(styles.color).toMatch(/rgb\(255,\s*107,\s*107\)|#ff6b6b/i)
+        expect(styles.borderColor).toMatch(/rgb\(255,\s*107,\s*107\)|#ff6b6b/i)
     })
 
     it('does not apply the error palette to a successful tool', () => {
         renderWithTheme(<UsedToolChips tools={[{ tool: 'good_tool' }]} />)
         const chip = screen.getByText('good_tool').closest('.MuiChip-root') as HTMLElement
         const styles = getComputedStyle(chip)
-        expect(styles.color).not.toMatch(/rgb\(244,\s*67,\s*54\)|#f44336/i)
+        expect(styles.color).not.toMatch(/rgb\(255,\s*107,\s*107\)|#ff6b6b/i)
     })
 })

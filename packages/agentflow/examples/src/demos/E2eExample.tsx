@@ -1,7 +1,7 @@
 /**
  * E2E Example
  *
- * Demonstrates a full end-to-end integration with a live Flowise instance:
+ * Demonstrates a full end-to-end integration with a live AgentFactory instance:
  * - Load a saved flow from the database via VITE_FLOW_ID
  * - Editable flow title (synced to DB on save)
  * - Save flow to DB (creates new chatflow if no ID is configured)
@@ -11,8 +11,8 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-import type { AgentFlowInstance, FlowData, HeaderRenderProps } from '@flowiseai/agentflow'
-import { Agentflow } from '@flowiseai/agentflow'
+import type { AgentFlowInstance, FlowData, HeaderRenderProps } from '@alexocloudai/agentflow'
+import { Agentflow } from '@alexocloudai/agentflow'
 import { Button, Chip, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Fab } from '@mui/material'
 import { IconDeviceFloppy, IconPlayerPlay, IconTrash } from '@tabler/icons-react'
 

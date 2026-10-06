@@ -519,7 +519,7 @@ describe('EditNodeDialog', () => {
     })
 
     // ========================================================================
-    // Async-driven Field Visibility (FLOWISE-233 integration)
+    // Async-driven Field Visibility
     // ========================================================================
 
     describe('async-driven visibility', () => {

@@ -1,7 +1,7 @@
 /**
- * Flowise wrapper around LangChain's ChatBedrockConverse.
+ * AgentFactory wrapper around LangChain's ChatBedrockConverse.
  *
- * Extends the base class with three Flowise-specific behaviors:
+ * Extends the base class with three AgentFactory-specific behaviors:
  *
  * 1. **stopSequences stripping** — Some Bedrock models (DeepSeek, OpenAI GPT OSS)
  *    reject the `stopSequences` inference config field. The `invocationParams()`

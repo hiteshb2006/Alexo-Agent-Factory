@@ -1,4 +1,4 @@
-# @flowiseai/agentflow — Testing Guide
+# @alexocloudai/agentflow — Testing Guide
 
 ## Running Tests
 

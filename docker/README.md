@@ -1,6 +1,6 @@
-# Flowise Docker Hub Image
+# AgentFactory Docker Image
 
-Starts Flowise from [DockerHub Image](https://hub.docker.com/r/flowiseai/flowise)
+Starts AgentFactory from the [Docker Hub image](https://hub.docker.com/r/alexocloudai/agentfactory) — built locally from this repository on the first `docker compose up` until you publish it.
 
 ## Usage
 
@@ -18,9 +18,9 @@ If you like to persist your data (flows, logs, credentials, storage), set these 
 -   SECRETKEY_PATH=/home/node/.flowise
 -   BLOB_STORAGE_PATH=/home/node/.flowise/storage
 
-Flowise also support different environment variables to configure your instance. Read [more](https://docs.flowiseai.com/configuration/environment-variables)
+AgentFactory also support different environment variables to configure your instance. Read [more](https://docs.alexocloudai.com/configuration/environment-variables)
 
-> The container runs as the non-root `node` user (uid 1000), whose home directory is `/home/node`. If you bind-mount a host directory (e.g. `~/.flowise`) for persistence, make sure it's writable by that user - on Linux hosts this may require `chown -R 1000:1000 ~/.flowise`.
+> The container runs as the non-root `node` user (uid 1000), whose home directory is `/home/node`. If you bind-mount a host directory (e.g. `~/.agentfactory`) for persistence, make sure it's writable by that user - on Linux hosts this may require `chown -R 1000:1000 ~/.agentfactory`.
 
 ## Queue Mode:
 

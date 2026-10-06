@@ -59,7 +59,7 @@ export function getMessageAuthor(message: BaseMessage) {
 /**
  * Maps a message type to a Google Generative AI chat author.
  * Returns 'user' as default instead of throwing error
- * https://github.com/FlowiseAI/Flowise/issues/4743
+ * upstream issues #4743
  */
 export function convertAuthorToRole(author: string): (typeof POSSIBLE_ROLES)[number] {
     switch (author) {

@@ -55,13 +55,13 @@ describe('bindNodesApi', () => {
 
     describe('getNodeIconUrl', () => {
         it('should construct correct icon URL', () => {
-            const url = api.getNodeIconUrl('https://flowise.example.com', 'llmAgentflow')
-            expect(url).toBe('https://flowise.example.com/api/v1/node-icon/llmAgentflow')
+            const url = api.getNodeIconUrl('https://agentfactory.example.com', 'llmAgentflow')
+            expect(url).toBe('https://agentfactory.example.com/api/v1/node-icon/llmAgentflow')
         })
 
         it('should handle trailing slash in instanceUrl', () => {
-            const url = api.getNodeIconUrl('https://flowise.example.com/', 'agentNode')
-            expect(url).toBe('https://flowise.example.com/api/v1/node-icon/agentNode')
+            const url = api.getNodeIconUrl('https://agentfactory.example.com/', 'agentNode')
+            expect(url).toBe('https://agentfactory.example.com/api/v1/node-icon/agentNode')
         })
     })
 })

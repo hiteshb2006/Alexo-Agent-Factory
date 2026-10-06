@@ -1,4 +1,4 @@
-name: Publish @flowiseai/observe
+name: Publish @alexocloudai/observe
 on:
     workflow_dispatch:
         inputs:
@@ -34,7 +34,7 @@ jobs:
             pull-requests: write
         uses: ./.github/workflows/publish-package.yml
         with:
-            package_name: '@flowiseai/observe'
+            package_name: '@alexocloudai/observe'
             package_path: 'packages/observe'
             slug: 'observe'
             bump: ${{ inputs.bump }}

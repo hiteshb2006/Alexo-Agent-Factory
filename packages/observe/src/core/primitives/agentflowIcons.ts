@@ -1,6 +1,6 @@
 // AGENTFLOW_ICONS registry below is duplicated in
 // packages/agentflow/src/core/node-config/nodeIcons.ts — keep in sync until
-// extracted to packages/shared-ui in FLOWISE-628.
+// extracted to packages/shared-ui in a follow-up.
 
 import {
     type Icon,

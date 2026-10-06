@@ -1,20 +1,20 @@
 {
-    "name": "@flowiseai/agentflow",
+    "name": "@alexocloudai/agentflow",
     "version": "0.0.0-dev.14",
     "description": "Embeddable React component for building and visualizing AI agent workflows",
     "license": "Apache-2.0",
     "repository": {
         "type": "git",
-        "url": "https://github.com/FlowiseAI/Flowise.git",
+        "url": "https://github.com/hiteshb2006/Alexo-Agent-Factory.git",
         "directory": "packages/agentflow"
     },
-    "homepage": "https://github.com/FlowiseAI/Flowise/tree/main/packages/agentflow#readme",
+    "homepage": "https://github.com/hiteshb2006/Alexo-Agent-Factory/tree/main/packages/agentflow#readme",
     "bugs": {
-        "url": "https://github.com/FlowiseAI/Flowise/issues"
+        "url": "https://github.com/hiteshb2006/Alexo-Agent-Factory/issues"
     },
     "keywords": [
-        "flowise",
-        "flowiseai",
+        "agentfactory",
+        "alexocloudai",
         "agentflow",
         "react",
         "llm",
@@ -35,7 +35,7 @@
             "require": "./dist/index.umd.js",
             "types": "./dist/index.d.ts"
         },
-        "./flowise.css": "./dist/flowise.css"
+        "./agentfactory.css": "./dist/agentfactory.css"
     },
     "files": [
         "dist"

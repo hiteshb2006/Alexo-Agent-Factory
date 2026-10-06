@@ -3,28 +3,28 @@ version: '3.1'
 services:
     redis:
         image: redis:alpine
-        container_name: flowise-redis
+        container_name: agentfactory-redis
         ports:
             - '6379:6379'
         volumes:
             - redis_data:/data
         networks:
-            - flowise-net
+            - agentfactory-net
 
-    flowise:
-        container_name: flowise-main
+    agentfactory:
+        container_name: agentfactory-main
         build:
             context: .. # Build using the Dockerfile in the root directory
             dockerfile: docker/Dockerfile
         ports:
             - '${PORT}:${PORT}'
         volumes:
-            # Mount local .flowise to container's default location.
+            # Mount local .agentfactory to container's default location.
             # Container runs as the non-root `node` user, whose home is /home/node.
-            # Ensure the host directory is writable by that user (e.g. `chown -R 1000:1000 ../.flowise` on Linux hosts).
-            - ../.flowise:/home/node/.flowise
+            # Ensure the host directory is writable by that user (e.g. `chown -R 1000:1000 ../.agentfactory` on Linux hosts).
+            - ../.agentfactory:/home/node/.flowise
         environment:
-            # --- Essential Flowise Vars ---
+            # --- Essential AgentFactory Vars ---
             - PORT=${PORT:-3000}
             - DATABASE_PATH=/home/node/.flowise
             - SECRETKEY_PATH=/home/node/.flowise
@@ -32,24 +32,24 @@ services:
             - BLOB_STORAGE_PATH=/home/node/.flowise/storage
             # --- Queue Vars (Main Instance) ---
             - MODE=queue
-            - QUEUE_NAME=flowise-queue # Ensure this matches worker
+            - QUEUE_NAME=agentfactory-queue # Ensure this matches worker
             - REDIS_URL=redis://redis:6379 # Use service name 'redis'
         depends_on:
             - redis
         networks:
-            - flowise-net
+            - agentfactory-net
 
-    flowise-worker:
-        container_name: flowise-worker
+    agentfactory-worker:
+        container_name: agentfactory-worker
         build:
             context: .. # Build context is still the root
             dockerfile: docker/worker/Dockerfile # Ensure this path is correct
         volumes:
-            # Mount same local .flowise to worker.
+            # Mount same local .agentfactory to worker.
             # Container runs as the non-root `node` user, whose home is /home/node.
-            - ../.flowise:/home/node/.flowise
+            - ../.agentfactory:/home/node/.flowise
         environment:
-            # --- Essential Flowise Vars ---
+            # --- Essential AgentFactory Vars ---
             - WORKER_PORT=${WORKER_PORT:-5566} # Port for worker healthcheck
             - DATABASE_PATH=/home/node/.flowise
             - SECRETKEY_PATH=/home/node/.flowise
@@ -57,18 +57,18 @@ services:
             - BLOB_STORAGE_PATH=/home/node/.flowise/storage
             # --- Queue Vars (Main Instance) ---
             - MODE=queue
-            - QUEUE_NAME=flowise-queue # Ensure this matches worker
+            - QUEUE_NAME=agentfactory-queue # Ensure this matches worker
             - REDIS_URL=redis://redis:6379 # Use service name 'redis'
         depends_on:
             - redis
-            - flowise
+            - agentfactory
         networks:
-            - flowise-net
+            - agentfactory-net
 
 volumes:
     redis_data:
         driver: local
 
 networks:
-    flowise-net:
+    agentfactory-net:
         driver: bridge

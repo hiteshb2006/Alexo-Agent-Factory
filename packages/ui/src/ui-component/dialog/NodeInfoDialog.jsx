@@ -146,7 +146,7 @@ const NodeInfoDialog = ({ show, dialogProps, onCancel }) => {
                                             flexDirection: 'row',
                                             width: 'max-content',
                                             borderRadius: 15,
-                                            background: dialogProps.data.badge === 'DEPRECATING' ? '#ffe57f' : '#52b69a',
+                                            background: dialogProps.data.badge === 'DEPRECATING' ? '#ffd166' : '#14d8c4',
                                             padding: 5,
                                             paddingLeft: 10,
                                             paddingRight: 10,

@@ -30,7 +30,7 @@ class SlackOAuth2 implements INodeCredential {
         this.name = 'slackOAuth2'
         this.version = 1.0
         this.description =
-            'You can find the setup instructions <a target="_blank" href="https://docs.flowiseai.com/integrations/langchain/tools/slack-mcp-user-guide">here</a>'
+            'You can find the setup instructions <a target="_blank" href="https://docs.alexocloudai.com/integrations/langchain/tools/slack-mcp-user-guide">here</a>'
         this.inputs = [
             {
                 label: 'Authorization URL',

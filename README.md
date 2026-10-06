@@ -1,27 +1,24 @@
-<!-- markdownlint-disable MD030 -->
+<!-- markdownlint-disable MD030 MD033 MD041 -->
 
 <p align="center">
-<img src="https://github.com/FlowiseAI/Flowise/blob/main/images/flowise_white.svg#gh-light-mode-only">
-<img src="https://github.com/FlowiseAI/Flowise/blob/main/images/flowise_dark.svg#gh-dark-mode-only">
+<img width="440" alt="AgentFactory" src="./images/agentfactory_by_alexocloudai_white.svg#gh-light-mode-only">
+<img width="440" alt="AgentFactory" src="./images/agentfactory_by_alexocloudai_dark.svg#gh-dark-mode-only">
 </p>
+
+<p align="center"><b>Build, orchestrate, and scale AI agents.</b><br/>Ideas → Agents → Automation → Real impact</p>
 
 <div align="center">
 
-[![Release Notes](https://img.shields.io/github/release/FlowiseAI/Flowise)](https://github.com/FlowiseAI/Flowise/releases)
-[![Discord](https://img.shields.io/discord/1087698854775881778?label=Discord&logo=discord)](https://discord.gg/jbaHfsRVBW)
-[![Twitter Follow](https://img.shields.io/twitter/follow/FlowiseAI?style=social)](https://twitter.com/FlowiseAI)
-[![GitHub star chart](https://img.shields.io/github/stars/FlowiseAI/Flowise?style=social)](https://star-history.com/#FlowiseAI/Flowise)
-[![GitHub fork](https://img.shields.io/github/forks/FlowiseAI/Flowise?style=social)](https://github.com/FlowiseAI/Flowise/fork)
+[![Release Notes](https://img.shields.io/github/v/release/hiteshb2006/Alexo-Agent-Factory?color=7C3AED)](https://github.com/hiteshb2006/Alexo-Agent-Factory/releases)
+[![Docs](https://img.shields.io/badge/docs-docs.alexocloudai.com-14D8C4)](https://docs.alexocloudai.com)
+[![Follow AlexoCloudAI](https://img.shields.io/twitter/follow/AlexoCloudAI?style=social)](https://twitter.com/AlexoCloudAI)
 
 English | [繁體中文](./i18n/README-TW.md) | [简体中文](./i18n/README-ZH.md) | [日本語](./i18n/README-JA.md) | [한국어](./i18n/README-KR.md)
 
 </div>
 
-<h2>Flowise has been archived. Refer to [Future of Flowise](https://github.com/FlowiseAI/Flowise/discussions/6727)</h2>
-
-<h3>Build AI Agents, Visually</h3>
-<a href="https://github.com/FlowiseAI/Flowise">
-<img width="100%" src="https://github.com/FlowiseAI/Flowise/blob/main/images/flowise_agentflow.gif?raw=true"></a>
+<a href="https://alexocloudai.com">
+<img width="100%" alt="Turn ideas into AI agents that work." src="./images/agentfactory_banner.png"></a>
 
 ## 📚 Table of Contents
 
@@ -29,105 +26,78 @@ English | [繁體中文](./i18n/README-TW.md) | [简体中文](./i18n/README-ZH.
 -   [🐳 Docker](#-docker)
 -   [👨‍💻 Developers](#-developers)
 -   [🌱 Env Variables](#-env-variables)
+-   [🎨 Brand](#-brand)
 -   [📖 Documentation](#-documentation)
--   [🌐 Self Host](#-self-host)
--   [☁️ Flowise Cloud](#️-flowise-cloud)
 -   [🙋 Support](#-support)
 -   [🙌 Contributing](#-contributing)
 -   [📄 License](#-license)
 
-## ⚡Quick Start
+## ⚡ Quick Start
 
-Download and Install [NodeJS](https://nodejs.org/en/download) >= 20.0.0
+Requires [Node.js](https://nodejs.org/en/download) 24 and [PNPM](https://pnpm.io/installation).
 
-1. Install Flowise
-    ```bash
-    npm install -g flowise
-    ```
-2. Start Flowise
+```bash
+git clone https://github.com/hiteshb2006/Alexo-Agent-Factory.git
+cd Alexo-Agent-Factory
+pnpm install
+pnpm build
+pnpm start
+```
 
-    ```bash
-    npx flowise start
-    ```
-
-3. Open [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000).
 
 ## 🐳 Docker
 
 ### Docker Compose
 
-1. Clone the Flowise project
-2. Go to `docker` folder at the root of the project
-3. Copy `.env.example` file, paste it into the same location, and rename to `.env` file
-4. `docker compose up -d`
-5. Open [http://localhost:3000](http://localhost:3000)
-6. You can bring the containers down by `docker compose stop`
+1. Go to the `docker` folder at the root of the project
+2. Copy `.env.example` to `.env`
+3. `docker compose up -d` — builds the `alexocloudai/agentfactory` image from source the first time (or pulls it once you publish it)
+4. Open [http://localhost:3000](http://localhost:3000)
+5. Stop the containers with `docker compose stop`
 
 ### Docker Image
 
 1. Build the image locally:
 
     ```bash
-    docker build --no-cache -t flowise .
+    docker build -f docker/Dockerfile -t alexocloudai/agentfactory .
     ```
 
-2. Run image:
+2. Run the image:
 
     ```bash
-    docker run -d --name flowise -p 3000:3000 flowise
+    docker run -d --name agentfactory -p 3000:3000 alexocloudai/agentfactory
     ```
 
-3. Stop image:
+3. Stop the container:
 
     ```bash
-    docker stop flowise
+    docker stop agentfactory
     ```
+
+For queue mode (main server + workers + Redis) see [docker/README.md](./docker/README.md) and [docker/worker/README.md](./docker/worker/README.md).
 
 ## 👨‍💻 Developers
 
-Flowise has 3 different modules in a single mono repository.
+AgentFactory is a single mono repository:
 
--   `server`: Node backend to serve API logics
+-   `server`: Node backend that serves the API (`agentfactory` CLI)
 -   `ui`: React frontend
--   `components`: Third-party nodes integrations
--   `api-documentation`: Auto-generated swagger-ui API docs from express
-
-### Prerequisite
-
--   Install [PNPM](https://pnpm.io/installation)
-    ```bash
-    npm i -g pnpm
-    ```
+-   `components`: Agent nodes and third-party integrations
+-   `api-documentation`: Auto-generated swagger-ui API docs
+-   `agentflow` / `observe`: Embeddable React SDKs for the agent canvas and execution viewer
 
 ### Setup
 
-1.  Clone the repository:
-
-    ```bash
-    git clone https://github.com/FlowiseAI/Flowise.git
-    ```
-
-2.  Go into repository folder:
-
-    ```bash
-    cd Flowise
-    ```
-
-3.  Install all dependencies of all modules:
-
-    ```bash
-    pnpm install
-    ```
-
-4.  Build all the code:
-
-    ```bash
-    pnpm build
-    ```
+1.  Install [PNPM](https://pnpm.io/installation): `npm i -g pnpm`
+2.  Install all dependencies: `pnpm install`
+3.  Build everything: `pnpm build`
 
     <details>
-    <summary>Exit code 134 (JavaScript heap out of memory)</summary>  
-    If you get this error when running the above `build` script, try increasing the Node.js heap size and run the script again:
+    <summary>Exit code 134 (JavaScript heap out of memory)</summary>
+
+    Increase the Node.js heap size and build again:
 
     ```bash
     # macOS / Linux / Git Bash
@@ -135,99 +105,50 @@ Flowise has 3 different modules in a single mono repository.
 
     # Windows PowerShell
     $env:NODE_OPTIONS="--max-old-space-size=4096"
-
-    # Windows CMD
-    set NODE_OPTIONS=--max-old-space-size=4096
-    ```
-
-    Then run:
-
-    ```bash
-    pnpm build
     ```
 
     </details>
 
-5.  Start the app:
+4.  Start the app: `pnpm start` → [http://localhost:3000](http://localhost:3000)
+5.  Development mode with hot reload:
 
-    ```bash
-    pnpm start
-    ```
-
-    You can now access the app on [http://localhost:3000](http://localhost:3000)
-
-6.  For development build:
-
-    -   Create `.env` file and specify the `VITE_PORT` (refer to `.env.example`) in `packages/ui`
-    -   Create `.env` file and specify the `PORT` (refer to `.env.example`) in `packages/server`
-    -   Run:
-
-        ```bash
-        pnpm dev
-        ```
-
-    Any code changes will reload the app automatically on [http://localhost:8080](http://localhost:8080)
+    -   Create `packages/ui/.env` and set `VITE_PORT` (see `.env.example`)
+    -   Create `packages/server/.env` and set `PORT` (see `.env.example`)
+    -   Run `pnpm dev` → [http://localhost:8080](http://localhost:8080)
 
 ## 🌱 Env Variables
 
-Flowise supports different environment variables to configure your instance. You can specify the following variables in the `.env` file inside `packages/server` folder. Read [more](https://github.com/FlowiseAI/Flowise/blob/main/CONTRIBUTING.md#-env-variables)
+Configure your instance with environment variables in `packages/server/.env` (or `docker/.env`). See the full list in [CONTRIBUTING.md](./CONTRIBUTING.md#-env-variables).
+
+AgentFactory-specific variables use the `AGENTFACTORY_` prefix (for example `AGENTFACTORY_FILE_SIZE_LIMIT`, `AGENTFACTORY_SECRETKEY_OVERWRITE`, `DISABLE_AGENTFACTORY_TELEMETRY`). Older variable names from existing deployments are still accepted.
+
+## 🎨 Brand
+
+| Token         | Hex       | Usage                        |
+| ------------- | --------- | ---------------------------- |
+| Midnight Navy | `#0B1220` | Trust, stability — dark UI   |
+| Charcoal      | `#1F2937` | Balance, clarity — surfaces  |
+| Electric Teal | `#14D8C4` | Innovation, AI — accents     |
+| Vivid Violet  | `#7C3AED` | Intelligence — primary / CTA |
+| Coral Accent  | `#FF6B6B` | Energy — alerts / errors     |
+| Cloud         | `#F5F7FB` | Clean, simple — backgrounds  |
+
+Typography: **Inter**. Logos, app icon and banners live in [`images/`](./images) and [`assets/`](./assets). See [BRANDING.md](./BRANDING.md) for the full brand and hosting guide.
 
 ## 📖 Documentation
 
-You can view the Flowise Docs [here](https://docs.flowiseai.com/)
-
-## 🌐 Self Host
-
-Deploy Flowise self-hosted in your existing infrastructure, we support various [deployments](https://docs.flowiseai.com/configuration/deployment)
-
--   [AWS](https://docs.flowiseai.com/configuration/deployment/aws)
--   [Azure](https://docs.flowiseai.com/configuration/deployment/azure)
--   [Digital Ocean](https://docs.flowiseai.com/configuration/deployment/digital-ocean)
--   [GCP](https://docs.flowiseai.com/configuration/deployment/gcp)
--   [Alibaba Cloud](https://computenest.console.aliyun.com/service/instance/create/default?type=user&ServiceName=Flowise社区版)
--   <details>
-      <summary>Others</summary>
-
-    -   [Railway](https://docs.flowiseai.com/configuration/deployment/railway)
-
-        [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/pn4G8S?referralCode=WVNPD9)
-
-    -   [Northflank](https://northflank.com/stacks/deploy-flowiseai)
-
-        [![Deploy to Northflank](https://assets.northflank.com/deploy_to_northflank_smm_36700fb050.svg)](https://northflank.com/stacks/deploy-flowiseai)
-
-    -   [Render](https://docs.flowiseai.com/configuration/deployment/render)
-
-        [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://docs.flowiseai.com/configuration/deployment/render)
-
-    -   [HuggingFace Spaces](https://docs.flowiseai.com/configuration/deployment/hugging-face)
-
-        <a href="https://huggingface.co/spaces/FlowiseAI/Flowise"><img src="https://huggingface.co/datasets/huggingface/badges/raw/main/open-in-hf-spaces-sm.svg" alt="HuggingFace Spaces"></a>
-
-    -   [Elestio](https://elest.io/open-source/flowiseai)
-
-        [![Deploy on Elestio](https://elest.io/images/logos/deploy-to-elestio-btn.png)](https://elest.io/open-source/flowiseai)
-
-    -   [Sealos](https://template.sealos.io/deploy?templateName=flowise)
-
-        [![Deploy on Sealos](https://sealos.io/Deploy-on-Sealos.svg)](https://template.sealos.io/deploy?templateName=flowise)
-
-    -   [RepoCloud](https://repocloud.io/details/?app_id=29)
-
-        [![Deploy on RepoCloud](https://d16t0pc4846x52.cloudfront.net/deploy.png)](https://repocloud.io/details/?app_id=29)
-
-      </details>
-
-## ☁️ Flowise Cloud
-
-Get Started with [Flowise Cloud](https://flowiseai.com/).
+AgentFactory docs: [docs.alexocloudai.com](https://docs.alexocloudai.com)
 
 ## 🙋 Support
 
-Feel free to ask any questions, raise problems, and request new features in [Discussion](https://github.com/FlowiseAI/Flowise/discussions).
+Ask questions, report problems, and request features in [GitHub Discussions](https://github.com/hiteshb2006/Alexo-Agent-Factory/discussions) or email [support@alexocloudai.com](mailto:support@alexocloudai.com).
 
+## 🙌 Contributing
 
+See the [contributing guide](./CONTRIBUTING.md).
 
 ## 📄 License
 
-Source code in this repository is made available under the [Apache License Version 2.0](LICENSE.md).
+Source code in this repository is made available under the [Apache License Version 2.0](LICENSE.md), except the directories listed at the top of [LICENSE.md](LICENSE.md), which are under a separate commercial license.
+
+AgentFactory is built on the open-source Flowise project (Apache 2.0); the original copyright notices are retained in [LICENSE.md](LICENSE.md).

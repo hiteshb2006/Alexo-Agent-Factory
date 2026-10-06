@@ -34,7 +34,7 @@ const getStatusColors = (status, isDarkMode, theme) => {
         case MCP_SERVER_STATUS.AUTHORIZED:
             return isDarkMode ? ['#1b5e20', '#2e7d32', '#ffffff'] : ['#e8f5e9', '#81c784', '#43a047']
         case MCP_SERVER_STATUS.ERROR:
-            return isDarkMode ? ['#b71c1c', '#c62828', '#ffffff'] : ['#ffebee', '#ef9a9a', '#c62828']
+            return isDarkMode ? ['#b71c1c', '#e03e3e', '#ffffff'] : ['#ffebee', '#ef9a9a', '#e03e3e']
         case MCP_SERVER_STATUS.PENDING:
         default:
             return isDarkMode

@@ -22,7 +22,7 @@ const NOT_INITIALIZED = 'Auth secrets not initialized. Call initAuthSecrets() fi
 
 /**
  * Initialize auth secrets from env (backwards compat) → AWS Secrets Manager → filesystem.
- * Each secret is generated with crypto.randomBytes(32) when created (or 'flowise' for JWT_ISSUER/JWT_AUDIENCE).
+ * Each secret is generated with crypto.randomBytes(32) when created (or 'agentfactory' for JWT_ISSUER/JWT_AUDIENCE).
  * Call once after getEncryptionKey() in initDatabase().
  */
 export async function initAuthSecrets(): Promise<void> {
@@ -58,14 +58,14 @@ export async function initAuthSecrets(): Promise<void> {
         envKey: 'JWT_ISSUER',
         fileName: 'jwt_issuer.key',
         awsSecretIdSuffix: 'JWTIssuer',
-        defaultValueForNew: 'flowise'
+        defaultValueForNew: 'agentfactory'
     })
 
     jwtAudience = await getOrCreateStoredSecret({
         envKey: 'JWT_AUDIENCE',
         fileName: 'jwt_audience.key',
         awsSecretIdSuffix: 'JWTAudience',
-        defaultValueForNew: 'flowise'
+        defaultValueForNew: 'agentfactory'
     })
 }
 

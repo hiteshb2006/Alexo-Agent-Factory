@@ -187,7 +187,7 @@ function NodeInfoDialogComponent({ open, onClose, data }: NodeInfoDialogProps) {
                                 {badge && (
                                     <InfoBadge
                                         label={badge}
-                                        bgColor={badge === 'DEPRECATING' ? '#ffe57f' : '#52b69a'}
+                                        bgColor={badge === 'DEPRECATING' ? '#ffd166' : '#14d8c4'}
                                         textColor={badge === 'DEPRECATING' ? 'inherit' : 'white'}
                                     />
                                 )}

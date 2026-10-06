@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 100" width="583" height="100" role="img" aria-label="AgentFactory">
+  <title>AgentFactory</title>
+  <defs>
+    <linearGradient id="afg" gradientUnits="userSpaceOnUse" x1="10" y1="90" x2="100" y2="10">
+      <stop offset="0" stop-color="#7C3AED"/>
+      <stop offset="0.55" stop-color="#4F7BEA"/>
+      <stop offset="1" stop-color="#14D8C4"/>
+    </linearGradient>
+    <linearGradient id="afgBar" gradientUnits="userSpaceOnUse" x1="56" y1="0" x2="110" y2="0">
+      <stop offset="0" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#14D8C4"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(4 0)">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 84 L52 16" stroke="url(#afg)" stroke-width="15"/>
+      <path d="M52 16 L74 58" stroke="url(#afg)" stroke-width="15"/>
+      <path d="M34 60 L56 60" stroke="url(#afg)" stroke-width="12"/>
+      <path d="M74 58 L84 78" stroke="#14D8C4" stroke-width="12"/>
+      <path d="M66 22 L98 22" stroke="url(#afgBar)" stroke-width="14"/>
+      <path d="M70 44 L96 44" stroke="url(#afgBar)" stroke-width="13"/>
+    </g>
+    <circle cx="16" cy="84" r="12" fill="#7C3AED"/>
+    <circle cx="16" cy="84" r="5" fill="#0B1220"/>
+    <circle cx="58" cy="60" r="9" fill="#5B6CF0"/>
+    <circle cx="58" cy="60" r="3.6" fill="#0B1220"/>
+    <circle cx="87" cy="83" r="12" fill="#14D8C4"/>
+    <circle cx="87" cy="83" r="5" fill="#0B1220"/>
+    <circle cx="106" cy="20" r="12" fill="#14D8C4"/>
+    <circle cx="106" cy="20" r="5" fill="#0B1220"/>
+  </g>
+  <g fill="#FFFFFF"><path transform="translate(140.00 76.00) scale(0.03516 -0.03516)" d="M9 0H341L449 325H1006L1110 0H1451L928 1490H532ZM532 571 583 725C631 877 677 1029 731 1214C784 1029 830 877 876 725L926 571Z"/>
+<path transform="translate(189.92 76.00) scale(0.03516 -0.03516)" d="M603 -432C909 -432 1119 -294 1119 41V1056H828V903H827C760 1020 650 1078 513 1078C243 1078 58 853 58 536C58 221 239 -1 515 -1C653 -1 764 55 827 179H828V17C828 -135 747 -215 603 -215C493 -215 415 -170 394 -90H110C140 -295 303 -432 603 -432ZM591 235C448 235 355 346 355 540C355 734 448 844 591 844C740 844 839 724 839 540C839 355 740 235 591 235Z"/>
+<path transform="translate(231.51 76.00) scale(0.03516 -0.03516)" d="M586 -24C842 -24 1046 122 1085 332H816C789 250 710 197 595 197C440 197 350 298 345 454H1096V533C1096 855 887 1080 576 1080C273 1080 58 849 58 527C58 206 266 -24 586 -24ZM347 642C363 774 450 856 582 856C715 856 803 774 818 642Z"/>
+<path transform="translate(270.50 76.00) scale(0.03516 -0.03516)" d="M399 587C399 751 484 824 606 824C729 824 800 749 800 607V0H1094V661C1094 928 949 1078 724 1078C572 1078 465 1010 394 890V1056H104V0H399Z"/>
+<path transform="translate(311.22 76.00) scale(0.03516 -0.03516)" d="M711 1056H495V1344H200V1056H18V825H200V280C200 88 307 0 539 0H711V231H598C518 231 495 254 495 326V825H711Z"/><path transform="translate(339.76 76.00) scale(0.03516 -0.03516)" d="M136 0H358V657H1049V849H358V1295H1106V1490H136Z"/>
+<path transform="translate(378.89 76.00) scale(0.03516 -0.03516)" d="M441 -17C623 -17 709 65 753 150H757V0H965V724C965 939 806 1077 546 1077C282 1077 111 935 101 734H308C316 831 408 904 543 904C677 904 756 830 756 728V719C756 642 690 644 492 620C277 595 75 543 75 302C75 91 231 -17 441 -17ZM484 153C361 153 285 207 285 298C285 405 389 446 504 463C616 479 728 496 757 519V395C757 265 670 153 484 153Z"/>
+<path transform="translate(415.56 76.00) scale(0.03516 -0.03516)" d="M571 -24C823 -24 1009 142 1033 362H820C792 239 717 158 572 158C389 158 281 302 281 526C281 752 390 898 572 898C715 898 801 814 823 695H1033C1007 919 823 1080 571 1080C270 1080 67 851 67 526C67 203 269 -24 571 -24Z"/>
+<path transform="translate(452.55 76.00) scale(0.03516 -0.03516)" d="M628 1056H414V1344H202V1056H16V882H202V252C202 82 297 0 495 0H628V174H525C441 174 414 201 414 279V882H628Z"/>
+<path transform="translate(474.87 76.00) scale(0.03516 -0.03516)" d="M573 -24C875 -24 1078 201 1078 526C1078 853 875 1080 573 1080C271 1080 67 853 67 526C67 201 271 -24 573 -24ZM573 158C392 158 281 301 281 526C281 753 393 898 573 898C753 898 865 753 865 526C865 302 754 158 573 158Z"/>
+<path transform="translate(513.72 76.00) scale(0.03516 -0.03516)" d="M119 0H330V624C330 796 427 877 546 877C595 877 641 870 657 867V1064C640 1066 612 1069 580 1069C446 1069 364 1000 325 885H321V1056H119Z"/>
+<path transform="translate(536.71 76.00) scale(0.03516 -0.03516)" d="M133 -418H267C410 -418 514 -338 573 -185L1053 1056H830L622 477C594 398 567 319 541 240C515 319 489 398 461 477L250 1056H24L432 7L384 -118C352 -204 313 -240 247 -240H133Z"/></g>
+  
+</svg>

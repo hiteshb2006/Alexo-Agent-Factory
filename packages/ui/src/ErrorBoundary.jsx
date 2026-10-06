@@ -35,7 +35,7 @@ const ErrorBoundary = ({ error }) => {
                     </Box>
                 </Card>
                 <Typography variant='body1' sx={{ fontSize: '1.1rem', textAlign: 'center', lineHeight: '1.5' }}>
-                    Please retry after some time. If the issue persists, reach out to us on our Discord server.
+                    Please retry after some time. If the issue persists, reach out to the AgentFactory team at support@alexocloudai.com.
                     <br />
                     Alternatively, you can raise an issue on Github.
                 </Typography>

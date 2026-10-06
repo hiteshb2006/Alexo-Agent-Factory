@@ -1,5 +1,5 @@
 // ============================================================================
-// Component Props — Public API surface for @flowiseai/observe
+// Component Props — Public API surface for @alexocloudai/observe
 // ============================================================================
 
 import type { InternalAxiosRequestConfig } from 'axios'
@@ -18,7 +18,7 @@ export type RequestInterceptor = (config: InternalAxiosRequestConfig) => Interna
 // ============================================================================
 
 export interface ObserveBaseProps {
-    /** Flowise API server endpoint (e.g. "https://flowise-url.com") */
+    /** AgentFactory API server endpoint (e.g. "https://agentfactory-url.com") */
     apiBaseUrl: string
     /**
      * API key — injected as `Authorization: Bearer <token>`.
@@ -58,7 +58,7 @@ export interface ExecutionsViewerProps {
     /**
      * Pluggable HITL callback. When provided, Approve/Reject buttons are rendered
      * on INPROGRESS human input nodes. The SDK does NOT make the prediction call —
-     * the consumer owns the routing (direct Flowise or via AgentForge proxy).
+     * the consumer owns the routing (direct AgentFactory or via AgentForge proxy).
      */
     onHumanInput?: (agentflowId: string, params: HumanInputParams) => Promise<void>
     /** Initial filter state */

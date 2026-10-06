@@ -577,9 +577,9 @@ describe('validateSQLitePath', () => {
         })
 
         it('should reject path to frontend build directory (XSS attack vector)', () => {
-            expect(() => validateSQLitePath('/usr/local/lib/node_modules/flowise/node_modules/flowise-ui/build/xss.html')).toThrow(
-                /Invalid SQLite path:/
-            )
+            expect(() =>
+                validateSQLitePath('/usr/local/lib/node_modules/agentfactory/node_modules/agentfactory-ui/build/xss.html')
+            ).toThrow(/Invalid SQLite path:/)
         })
 
         it('should reject path to home directory outside .flowise', () => {
@@ -600,14 +600,14 @@ describe('validateSQLitePath', () => {
         })
 
         it('should accept database file under DATABASE_PATH when set', () => {
-            const customBase = path.join(userHome, 'custom-flowise-data')
+            const customBase = path.join(userHome, 'custom-agentfactory-data')
             process.env.DATABASE_PATH = customBase
             const dbPath = path.join(customBase, 'database.sqlite')
             expect(validateSQLitePath(dbPath)).toBe(path.resolve(dbPath))
         })
 
         it('should still reject paths outside DATABASE_PATH and .flowise', () => {
-            process.env.DATABASE_PATH = path.join(userHome, 'custom-flowise-data')
+            process.env.DATABASE_PATH = path.join(userHome, 'custom-agentfactory-data')
             expect(() => validateSQLitePath('/etc/chromium/exploit.conf')).toThrow(/Invalid SQLite path:/)
         })
     })
@@ -673,7 +673,7 @@ describe('isValidURL', () => {
     describe('accepts valid http/https URLs', () => {
         it.each([
             ['bare http host', 'http://localhost:3000'],
-            ['https with path', 'https://flowise.example.com/api'],
+            ['https with path', 'https://agentfactory.example.com/api'],
             ['http with port and path', 'http://192.168.1.1:3000/api/v1'],
             ['https with query string', 'https://example.com/search?q=hello']
         ])('should accept %s', (_desc, url) => {
@@ -752,7 +752,7 @@ describe('getSafeFilePath', () => {
     describe('throws on path traversal / absolute keys', () => {
         it.each([
             ['parent traversal', '../escape.txt'],
-            ['deep traversal', '../../../../tmp/flowise-poc.txt'],
+            ['deep traversal', '../../../../tmp/agentfactory-poc.txt'],
             ['traversal mid-path', 'a/../../escape.txt'],
             ['bare dot-dot', '..'],
             ['absolute unix path', '/etc/cron.d/evil'],

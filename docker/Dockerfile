@@ -1,3 +1,8 @@
+# AgentFactory by AlexoCloudAI — production image built from this repository's source.
+#
+# Build (from the repository root):
+#   docker build -f docker/Dockerfile -t alexocloudai/agentfactory .
+
 # Node.js version (overridable via build-arg from CI)
 ARG NODE_VERSION=24
 
@@ -7,34 +12,43 @@ FROM node:${NODE_VERSION}-alpine AS build
 USER root
 
 # Install build dependencies
-RUN apk add --no-cache git python3 py3-pip make g++ build-base cairo-dev pango-dev
+RUN apk add --no-cache libc6-compat git python3 py3-pip make g++ build-base cairo-dev pango-dev && \
+    npm install -g pnpm@10.26.0
 
 # Skip downloading Chrome for Puppeteer (saves build time)
 ENV PUPPETEER_SKIP_DOWNLOAD=true
+ENV NODE_OPTIONS=--max-old-space-size=8192
 
-# Install latest Flowise globally (specific version can be set: flowise@1.0.0)
-# npm dedupe is required after install: npm's overrides resolver does not
-# consistently collapse every duplicate of an overridden package in one pass
-# on a tree this size/complexity
-RUN npm install -g flowise && npm --prefix "$(npm root -g)/flowise" dedupe
+WORKDIR /usr/src/agentfactory
+
+# Copy app source, install dependencies and build (SDK packages are not needed in the image)
+COPY . .
+RUN pnpm install --frozen-lockfile && \
+    pnpm build:docker
 
 # Stage 2: Runtime stage
 FROM node:${NODE_VERSION}-alpine
 
 # Install runtime dependencies
-RUN apk add --no-cache chromium git python3 py3-pip make g++ build-base cairo-dev pango-dev curl
+RUN apk add --no-cache libc6-compat chromium git python3 py3-pip make g++ build-base cairo-dev pango-dev curl && \
+    npm install -g pnpm@10.26.0
 
 # Set the environment variable for Puppeteer to find Chromium
+ENV PUPPETEER_SKIP_DOWNLOAD=true
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
-# Copy Flowise from the build stage
-COPY --from=build /usr/local/lib/node_modules /usr/local/lib/node_modules
-COPY --from=build /usr/local/bin /usr/local/bin
+WORKDIR /usr/src/agentfactory
 
-# Give the node user ownership of the installed package (node:*-alpine already has this user)
-RUN chown -R node:node /usr/local/lib/node_modules /usr/local/bin
+# Copy AgentFactory from the build stage
+COPY --from=build /usr/src/agentfactory /usr/src/agentfactory
 
-# Switch to non-root user
+# Expose the `agentfactory` CLI on the PATH
+RUN ln -s /usr/src/agentfactory/packages/server/bin/run /usr/local/bin/agentfactory && \
+    chown -R node:node /usr/src/agentfactory
+
+# Switch to non-root user (node:*-alpine already has this user)
 USER node
 
-ENTRYPOINT ["flowise", "start"]
+EXPOSE 3000
+
+ENTRYPOINT ["agentfactory", "start"]

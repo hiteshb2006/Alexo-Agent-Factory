@@ -19,7 +19,7 @@ import {
     EvaluationRunner,
     handleEscapeCharacters,
     IServerSideEventStreamer
-} from 'flowise-components'
+} from 'agentfactory-components'
 import { StatusCodes } from 'http-status-codes'
 import {
     IncomingInput,
@@ -1008,7 +1008,7 @@ export const utilBuildChatflow = async (req: Request, isInternal: boolean = fals
     const files = (req.files as Express.Multer.File[]) || []
     const abortControllerId = `${chatflow.id}_${chatId}`
     const isTool = req.get('flowise-tool') === 'true'
-    const isEvaluation: boolean = req.headers['X-Flowise-Evaluation'] || req.body.evaluation
+    const isEvaluation: boolean = req.headers['X-AgentFactory-Evaluation'] || req.body.evaluation
     let evaluationRunId = ''
     evaluationRunId = req.body.evaluationRunId
     if (isEvaluation && chatflow.type !== 'AGENTFLOW' && req.body.evaluationRunId) {

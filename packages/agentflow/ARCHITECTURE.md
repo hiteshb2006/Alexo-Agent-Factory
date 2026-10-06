@@ -1,6 +1,6 @@
-# @flowiseai/agentflow - Architecture
+# @alexocloudai/agentflow - Architecture
 
-This document describes the internal architecture of the `@flowiseai/agentflow` package.
+This document describes the internal architecture of the `@alexocloudai/agentflow` package.
 
 ## Overview
 

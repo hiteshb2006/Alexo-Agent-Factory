@@ -549,37 +549,37 @@ const LoaderConfigPreviewChunks = () => {
                                                 <Box display='grid' gridTemplateColumns='repeat(2, 1fr)' gap={gridSpacing}>
                                                     <Skeleton
                                                         animation={false}
-                                                        sx={{ bgcolor: customization.isDarkMode ? '#23262c' : '#fafafa' }}
+                                                        sx={{ bgcolor: customization.isDarkMode ? '#121b2e' : '#fafafa' }}
                                                         variant='rounded'
                                                         height={160}
                                                     />
                                                     <Skeleton
                                                         animation={false}
-                                                        sx={{ bgcolor: customization.isDarkMode ? '#23262c' : '#fafafa' }}
+                                                        sx={{ bgcolor: customization.isDarkMode ? '#121b2e' : '#fafafa' }}
                                                         variant='rounded'
                                                         height={160}
                                                     />
                                                     <Skeleton
                                                         animation={false}
-                                                        sx={{ bgcolor: customization.isDarkMode ? '#23262c' : '#fafafa' }}
+                                                        sx={{ bgcolor: customization.isDarkMode ? '#121b2e' : '#fafafa' }}
                                                         variant='rounded'
                                                         height={160}
                                                     />
                                                     <Skeleton
                                                         animation={false}
-                                                        sx={{ bgcolor: customization.isDarkMode ? '#23262c' : '#fafafa' }}
+                                                        sx={{ bgcolor: customization.isDarkMode ? '#121b2e' : '#fafafa' }}
                                                         variant='rounded'
                                                         height={160}
                                                     />
                                                     <Skeleton
                                                         animation={false}
-                                                        sx={{ bgcolor: customization.isDarkMode ? '#23262c' : '#fafafa' }}
+                                                        sx={{ bgcolor: customization.isDarkMode ? '#121b2e' : '#fafafa' }}
                                                         variant='rounded'
                                                         height={160}
                                                     />
                                                     <Skeleton
                                                         animation={false}
-                                                        sx={{ bgcolor: customization.isDarkMode ? '#23262c' : '#fafafa' }}
+                                                        sx={{ bgcolor: customization.isDarkMode ? '#121b2e' : '#fafafa' }}
                                                         variant='rounded'
                                                         height={160}
                                                     />

@@ -16,8 +16,8 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
         "paths": {
-            "@flowiseai/observe": ["../src/index.ts"],
-            "@flowiseai/observe/*": ["../src/*"]
+            "@alexocloudai/observe": ["../src/index.ts"],
+            "@alexocloudai/observe/*": ["../src/*"]
         }
     },
     "include": ["src", "*.tsx", "*.ts", "../src/**/*.ts", "../src/**/*.tsx"]

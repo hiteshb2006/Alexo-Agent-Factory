@@ -50,7 +50,7 @@ export function PropsDisplay({ exampleName, props, exampleId, showProps, onToggl
                 <span
                     style={{
                         fontSize: '11px',
-                        background: '#e3f2fd',
+                        background: '#f1eafe',
                         color: '#1976d2',
                         padding: '2px 8px',
                         borderRadius: '12px',

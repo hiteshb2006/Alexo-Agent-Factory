@@ -385,13 +385,13 @@ function AgentflowCanvas({
  *
  * @example
  * ```tsx
- * import { Agentflow } from '@flowiseai/agentflow'
- * import '@flowiseai/agentflow/flowise.css'
+ * import { Agentflow } from '@alexocloudai/agentflow'
+ * import '@alexocloudai/agentflow/agentfactory.css'
  *
  * function App() {
  *   return (
  *     <Agentflow
- *       apiBaseUrl="https://flowise-url.com"
+ *       apiBaseUrl="https://agentfactory-url.com"
  *       token="your-auth-token"
  *       components={['agentAgentflow', 'llmAgentflow']}
  *     />

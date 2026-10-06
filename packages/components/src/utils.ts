@@ -50,7 +50,7 @@ if (USE_AWS_SECRETS_MANAGER) {
 }
 
 /*
- * List of dependencies allowed to be import in @flowiseai/nodevm
+ * List of dependencies allowed to be import in @alexocloudai/nodevm
  *
  * Do NOT add 'puppeteer' or 'playwright' here (or via TOOL_FUNCTION_EXTERNAL_DEP): their launch()
  * APIs forward executablePath/args to child_process.spawn, which is a sandbox escape.
@@ -317,7 +317,7 @@ const extractTextFromChunk = (response: AIMessageChunk): string => {
 /**
  * Creates a streaming-compatible output parser that extracts text content from
  * chat model responses, filtering out reasoning/thinking content blocks.
- * https://github.com/FlowiseAI/Flowise/pull/5893#issuecomment-4045466531
+ * upstream pull #5893
  */
 export const createTextOnlyOutputParser = () => {
     return new TextOnlyOutputParser()
@@ -579,8 +579,8 @@ export const getEncryptionKeyPath = (): string => {
  * @returns {Promise<string>}
  */
 const getEncryptionKey = async (): Promise<string> => {
-    if (process.env.FLOWISE_SECRETKEY_OVERWRITE !== undefined && process.env.FLOWISE_SECRETKEY_OVERWRITE !== '') {
-        return process.env.FLOWISE_SECRETKEY_OVERWRITE
+    if (process.env.AGENTFACTORY_SECRETKEY_OVERWRITE !== undefined && process.env.AGENTFACTORY_SECRETKEY_OVERWRITE !== '') {
+        return process.env.AGENTFACTORY_SECRETKEY_OVERWRITE
     }
     try {
         if (USE_AWS_SECRETS_MANAGER && secretsManagerClient) {

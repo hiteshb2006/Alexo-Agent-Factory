@@ -13,7 +13,7 @@ import {
     convertChatHistoryToText,
     generateFollowUpPrompts,
     tracingEnvEnabled
-} from 'flowise-components'
+} from 'agentfactory-components'
 import {
     IncomingAgentflowInput,
     INodeData,

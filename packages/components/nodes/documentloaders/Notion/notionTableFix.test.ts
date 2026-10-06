@@ -189,8 +189,8 @@ describe('applyCompactTableTransformer', () => {
     it('handles tables with long URLs without adding padding', async () => {
         const rows: MockTableRow[] = [
             { cells: [richText('Item'), richText('URL')] },
-            { cells: [richText('Chatflows'), richText('https://flowiseai.com')] },
-            { cells: [richText('Docs'), richText('https://github.com/FlowiseAI/Flowise')] }
+            { cells: [richText('Chatflows'), richText('https://alexocloudai.com')] },
+            { cells: [richText('Docs'), richText('https://github.com/hiteshb2006/Alexo-Agent-Factory')] }
         ]
         const { loader, getTransformer } = createMockLoader(rows)
         applyCompactTableTransformer(loader as never)
@@ -202,8 +202,8 @@ describe('applyCompactTableTransformer', () => {
         const lines = result.split('\n')
         expect(lines[0]).toBe('| Item | URL |')
         expect(lines[1]).toBe('| --- | --- |')
-        expect(lines[2]).toBe('| Chatflows | https://flowiseai.com |')
-        expect(lines[3]).toBe('| Docs | https://github.com/FlowiseAI/Flowise |')
+        expect(lines[2]).toBe('| Chatflows | https://alexocloudai.com |')
+        expect(lines[3]).toBe('| Docs | https://github.com/hiteshb2006/Alexo-Agent-Factory |')
     })
 
     it('falls back to default handler when an error occurs', async () => {

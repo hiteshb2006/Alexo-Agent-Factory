@@ -1,7 +1,7 @@
 /**
  * OAuth2 Authorization Code Flow Implementation
  *
- * This module implements a complete OAuth2 authorization code flow for Flowise credentials.
+ * This module implements a complete OAuth2 authorization code flow for AgentFactory credentials.
  * It supports Microsoft Graph and other OAuth2 providers.
  *
  * CREDENTIAL DATA STRUCTURE:
@@ -58,7 +58,7 @@
 
 import axios from 'axios'
 import express, { NextFunction, Request, Response } from 'express'
-import { secureAxiosRequest } from 'flowise-components'
+import { secureAxiosRequest } from 'agentfactory-components'
 import { StatusCodes } from 'http-status-codes'
 import { Credential } from '../../database/entities/Credential'
 import { WorkspaceShared } from '../../enterprise/database/entities/EnterpriseEntities'

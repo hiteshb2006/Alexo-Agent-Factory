@@ -436,7 +436,7 @@ const EvaluationResultSideDrawer = ({ show, dialogProps, onClickFunction }) => {
                                                                 sx={{
                                                                     width: 'max-content',
                                                                     color: 'white',
-                                                                    backgroundColor: evaluator.result === 'Pass' ? '#00c853' : '#ff1744'
+                                                                    backgroundColor: evaluator.result === 'Pass' ? '#059669' : '#ff1744'
                                                                 }}
                                                                 size='small'
                                                                 label={evaluator.result}

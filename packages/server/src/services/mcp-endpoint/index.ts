@@ -277,7 +277,7 @@ const handleMcpRequest = async (chatflowId: string, token: string, req: Request,
     // Create a stateless MCP server for this request
     const mcpServer = new McpServer(
         {
-            name: `flowise-${toolName}`,
+            name: `agentfactory-${toolName}`,
             version: '1.0.0'
         },
         {

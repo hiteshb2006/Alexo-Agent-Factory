@@ -1,190 +1,64 @@
-<!-- markdownlint-disable MD030 -->
+<!-- markdownlint-disable MD030 MD033 MD041 -->
 
 <p align="center">
-<img src="https://github.com/FlowiseAI/Flowise/blob/main/images/flowise_white.svg#gh-light-mode-only">
-<img src="https://github.com/FlowiseAI/Flowise/blob/main/images/flowise_dark.svg#gh-dark-mode-only">
+<img width="440" alt="AgentFactory" src="../images/agentfactory_by_alexocloudai_white.svg#gh-light-mode-only">
+<img width="440" alt="AgentFactory" src="../images/agentfactory_by_alexocloudai_dark.svg#gh-dark-mode-only">
 </p>
 
-[![Release Notes](https://img.shields.io/github/release/FlowiseAI/Flowise)](https://github.com/FlowiseAI/Flowise/releases)
-[![Discord](https://img.shields.io/discord/1087698854775881778?label=Discord&logo=discord)](https://discord.gg/jbaHfsRVBW)
-[![Twitter Follow](https://img.shields.io/twitter/follow/FlowiseAI?style=social)](https://twitter.com/FlowiseAI)
-[![GitHub star chart](https://img.shields.io/github/stars/FlowiseAI/Flowise?style=social)](https://star-history.com/#FlowiseAI/Flowise)
-[![GitHub fork](https://img.shields.io/github/forks/FlowiseAI/Flowise?style=social)](https://github.com/FlowiseAI/Flowise/fork)
+<p align="center"><b>AI エージェントを構築・オーケストレーション・スケール</b></p>
 
-[English](../README.md) | [繁體中文](./README-TW.md) | [简体中文](./README-ZH.md) | 日本語 | [한국어](./README-KR.md)
+<div align="center">
 
-<h3>AIエージェントをビジュアルに構築</h3>
-<a href="https://github.com/FlowiseAI/Flowise">
-<img width="100%" src="https://github.com/FlowiseAI/Flowise/blob/main/images/flowise_agentflow.gif?raw=true"></a>
+[English](../README.md) | [繁體中文](./README-TW.md) | [简体中文](./README-ZH.md) | [日本語](./README-JA.md) | [한국어](./README-KR.md)
+
+</div>
+
+<a href="https://alexocloudai.com">
+<img width="100%" alt="AgentFactory" src="../images/agentfactory_banner.png"></a>
 
 ## ⚡ クイックスタート
 
-[NodeJS](https://nodejs.org/en/download) >= 20.0.0 をダウンロードしてインストール
+[Node.js](https://nodejs.org/en/download) 24 と [PNPM](https://pnpm.io/installation) が必要です。
 
-1. Flowise のインストール
-    ```bash
-    npm install -g flowise
-    ```
-2. Flowise の実行
+```bash
+git clone https://github.com/hiteshb2006/Alexo-Agent-Factory.git
+cd Alexo-Agent-Factory
+pnpm install
+pnpm build
+pnpm start
+```
 
-    ```bash
-    npx flowise start
-    ```
-
-3. [http://localhost:3000](http://localhost:3000) を開く
+ブラウザで開く: [http://localhost:3000](http://localhost:3000)
 
 ## 🐳 Docker
 
-### Docker Compose
+1. プロジェクトルートの `docker` フォルダへ移動
+2. `.env.example` を `.env` にコピー
+3. `docker compose up -d` を実行（初回はソースから `alexocloudai/agentfactory` イメージをビルド）
+4. ブラウザで開く: [http://localhost:3000](http://localhost:3000)
+5. `docker compose stop` でコンテナを停止
 
-1. プロジェクトのルートにある `docker` フォルダに移動する
-2. `.env.example` ファイルをコピーして同じ場所に貼り付け、名前を `.env` に変更する
-3. `docker compose up -d`
-4. [http://localhost:3000](http://localhost:3000) を開く
-5. コンテナを停止するには、`docker compose stop` を使用します
-
-### Docker Image
-
-1. ローカルにイメージを構築する:
-    ```bash
-    docker build --no-cache -t flowise .
-    ```
-2. image を実行:
-
-    ```bash
-    docker run -d --name flowise -p 3000:3000 flowise
-    ```
-
-3. image を停止:
-    ```bash
-    docker stop flowise
-    ```
+```bash
+docker build -f docker/Dockerfile -t alexocloudai/agentfactory .
+docker run -d --name agentfactory -p 3000:3000 alexocloudai/agentfactory
+```
 
 ## 👨‍💻 開発者向け
 
-Flowise には、3 つの異なるモジュールが 1 つの mono リポジトリにあります。
-
--   `server`: API ロジックを提供する Node バックエンド
--   `ui`: React フロントエンド
--   `components`: サードパーティノードとの統合
-
-### 必須条件
-
--   [PNPM](https://pnpm.io/installation) をインストール
-    ```bash
-    npm i -g pnpm
-    ```
-
-### セットアップ
-
-1. リポジトリをクローン
-
-    ```bash
-    git clone https://github.com/FlowiseAI/Flowise.git
-    ```
-
-2. リポジトリフォルダに移動
-
-    ```bash
-    cd Flowise
-    ```
-
-3. すべてのモジュールの依存関係をインストール:
-
-    ```bash
-    pnpm install
-    ```
-
-4. すべてのコードをビルド:
-
-    ```bash
-    pnpm build
-    ```
-
-5. アプリを起動:
-
-    ```bash
-    pnpm start
-    ```
-
-    [http://localhost:3000](http://localhost:3000) でアプリにアクセスできるようになりました
-
-6. 開発用ビルド:
-
-    - `.env` ファイルを作成し、`packages/ui` に `VITE_PORT` を指定する（`.env.example` を参照）
-    - `.env` ファイルを作成し、`packages/server` に `PORT` を指定する（`.env.example` を参照）
-    - 実行
-
-        ```bash
-        pnpm dev
-        ```
-
-    コードの変更は [http://localhost:8080](http://localhost:8080) に自動的にアプリをリロードします
+リポジトリには `server`（バックエンド API と `agentfactory` CLI）、`ui`（React フロントエンド）、`components`（ノードとサードパーティ連携）、`api-documentation`（Swagger ドキュメント）、`agentflow` / `observe`（埋め込み可能な React SDK）が含まれます。開発モード: `packages/ui` と `packages/server` に `.env.example` を元に `.env` を作成し、`pnpm dev` を実行してアクセス: [http://localhost:8080](http://localhost:8080)
 
 ## 🌱 環境変数
 
-Flowise は、インスタンスを設定するためのさまざまな環境変数をサポートしています。`packages/server` フォルダ内の `.env` ファイルで以下の変数を指定することができる。[続き](https://github.com/FlowiseAI/Flowise/blob/main/CONTRIBUTING.md#-env-variables)を読む
+`packages/server/.env` でインスタンスを設定します。一覧は [CONTRIBUTING.md](../CONTRIBUTING.md) を参照してください。AgentFactory 固有の変数は `AGENTFACTORY_` プレフィックスを使用し、従来の変数名も引き続き利用できます。
 
 ## 📖 ドキュメント
 
-[Flowise ドキュメント](https://docs.flowiseai.com/)
-
-## 🌐 セルフホスト
-
-お客様の既存インフラに Flowise をセルフホストでデプロイ、様々な[デプロイ](https://docs.flowiseai.com/configuration/deployment)をサポートします
-
--   [AWS](https://docs.flowiseai.com/deployment/aws)
--   [Azure](https://docs.flowiseai.com/deployment/azure)
--   [Digital Ocean](https://docs.flowiseai.com/deployment/digital-ocean)
--   [GCP](https://docs.flowiseai.com/deployment/gcp)
--   <details>
-      <summary>その他</summary>
-
-    -   [Railway](https://docs.flowiseai.com/deployment/railway)
-
-        [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/pn4G8S?referralCode=WVNPD9)
-
-    -   [Render](https://docs.flowiseai.com/deployment/render)
-
-        [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://docs.flowiseai.com/deployment/render)
-
-    -   [Hugging Face Spaces](https://docs.flowiseai.com/configuration/deployment/hugging-face)
-
-        <a href="https://huggingface.co/spaces/FlowiseAI/Flowise"><img src="https://huggingface.co/datasets/huggingface/badges/raw/main/open-in-hf-spaces-sm.svg" alt="Hugging Face Spaces"></a>
-
-    -   [Elestio](https://elest.io/open-source/flowiseai)
-
-        [![Deploy](https://pub-da36157c854648669813f3f76c526c2b.r2.dev/deploy-on-elestio-black.png)](https://elest.io/open-source/flowiseai)
-
-    -   [Sealos](https://cloud.sealos.io/?openapp=system-template%3FtemplateName%3Dflowise)
-
-        [![](https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg)](https://cloud.sealos.io/?openapp=system-template%3FtemplateName%3Dflowise)
-
-    -   [RepoCloud](https://repocloud.io/details/?app_id=29)
-
-        [![Deploy on RepoCloud](https://d16t0pc4846x52.cloudfront.net/deploy.png)](https://repocloud.io/details/?app_id=29)
-
-      </details>
-
-## ☁️ クラウドホスト
-
-[Flowise Cloud の使い方を始める](https://flowiseai.com/)
+[docs.alexocloudai.com](https://docs.alexocloudai.com)
 
 ## 🙋 サポート
 
-ご質問、問題提起、新機能のご要望は、[discussion](https://github.com/FlowiseAI/Flowise/discussions)までお気軽にどうぞ
-
-## 🙌 コントリビュート
-
-これらの素晴らしい貢献者に感謝します
-
-<a href="https://github.com/FlowiseAI/Flowise/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=FlowiseAI/Flowise" />
-</a>
-
-[コントリビューティングガイド](../CONTRIBUTING.md)を参照してください。質問や問題があれば、[Discord](https://discord.gg/jbaHfsRVBW) までご連絡ください。
-[![Star History Chart](https://api.star-history.com/svg?repos=FlowiseAI/Flowise&type=Timeline)](https://star-history.com/#FlowiseAI/Flowise&Date)
+質問や要望は [GitHub Discussions](https://github.com/hiteshb2006/Alexo-Agent-Factory/discussions) または [support@alexocloudai.com](mailto:support@alexocloudai.com) までお寄せください。
 
 ## 📄 ライセンス
 
-このリポジトリのソースコードは、[Apache License Version 2.0](../LICENSE.md)の下で利用可能です。
+本リポジトリのソースコードは [Apache License 2.0](../LICENSE.md) で提供されます（[LICENSE.md](../LICENSE.md) 冒頭に記載のディレクトリを除き、それらは別途商用ライセンスです）。AgentFactory はオープンソースの Flowise プロジェクト（Apache 2.0）を基に構築されており、元の著作権表示は [LICENSE.md](../LICENSE.md) に保持されています。

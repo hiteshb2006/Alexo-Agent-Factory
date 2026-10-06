@@ -4,6 +4,6 @@ export const flowId = import.meta.env.VITE_FLOW_ID || undefined
 export const executionId = import.meta.env.VITE_EXECUTION_ID || undefined
 
 // Base URL of the agentflow canvas (optional). Independent of `apiBaseUrl`
-// because the canvas can live on a different host than the Flowise API.
+// because the canvas can live on a different host than the AgentFactory API.
 // Demos that consume this append `/<agentflowId>` to navigate.
 export const agentflowCanvasUrl = import.meta.env.VITE_AGENTFLOW_CANVAS_URL || undefined

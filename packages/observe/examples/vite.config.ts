@@ -11,10 +11,10 @@ export default defineConfig({
         // ThemeContext is registered in one copy of @mui/material and read
         // from another, which silently falls back to MUI defaults (e.g. the
         // <Chip color='secondary'> renders MUI default #9c27b0 instead of
-        // our theme's #673ab7).
+        // our theme's #7c3aed).
         dedupe: ['react', 'react-dom', '@mui/material', '@mui/system', '@emotion/react', '@emotion/styled'],
         alias: {
-            '@flowiseai/observe': resolve(__dirname, '../src/index.ts'),
+            '@alexocloudai/observe': resolve(__dirname, '../src/index.ts'),
             '@': resolve(__dirname, '../src')
         }
     },

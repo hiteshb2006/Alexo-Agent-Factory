@@ -76,8 +76,8 @@ const pickToolIcon = (icons, isDarkMode) => {
 const TYPE_CHIP_COLOR = {
     light: {
         string: '#2E7D32',
-        number: '#1565C0',
-        integer: '#1565C0',
+        number: '#5B21B6',
+        integer: '#5B21B6',
         boolean: '#6A1B9A',
         object: '#E65100',
         array: '#00838F'
@@ -219,7 +219,7 @@ const DiscoveredToolRow = ({ tool, expanded, onToggle, isDarkMode, theme }) => {
                             label='DESTRUCTIVE'
                             tooltip='This tool may perform destructive actions'
                             bg={isDarkMode ? 'rgba(211,47,47,0.2)' : 'rgba(211,47,47,0.12)'}
-                            fg={isDarkMode ? '#EF9A9A' : '#C62828'}
+                            fg={isDarkMode ? '#EF9A9A' : '#E03E3E'}
                         />
                     )}
                     {openWorld && (
@@ -228,7 +228,7 @@ const DiscoveredToolRow = ({ tool, expanded, onToggle, isDarkMode, theme }) => {
                             label='EXTERNAL'
                             tooltip='This tool interacts with external systems'
                             bg={isDarkMode ? 'rgba(25,118,210,0.18)' : 'rgba(25,118,210,0.1)'}
-                            fg={isDarkMode ? '#90CAF9' : '#1565C0'}
+                            fg={isDarkMode ? '#C4B5FD' : '#5B21B6'}
                         />
                     )}
                     <Tooltip title={`${paramNames.length} parameter${paramNames.length === 1 ? '' : 's'}`} arrow>

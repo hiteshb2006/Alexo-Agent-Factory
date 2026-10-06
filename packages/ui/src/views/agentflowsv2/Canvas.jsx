@@ -770,9 +770,9 @@ const AgentflowCanvas = () => {
                                 </Controls>
                                 <MiniMap
                                     nodeStrokeWidth={3}
-                                    nodeColor={customization.isDarkMode ? '#2d2d2d' : '#e2e2e2'}
-                                    nodeStrokeColor={customization.isDarkMode ? '#525252' : '#fff'}
-                                    maskColor={customization.isDarkMode ? 'rgb(45, 45, 45, 0.6)' : 'rgb(240, 240, 240, 0.6)'}
+                                    nodeColor={customization.isDarkMode ? '#1f2937' : '#e2e2e2'}
+                                    nodeStrokeColor={customization.isDarkMode ? '#3a4660' : '#fff'}
+                                    maskColor={customization.isDarkMode ? 'rgb(31, 41, 55, 0.6)' : 'rgb(240, 240, 240, 0.6)'}
                                     style={{
                                         backgroundColor: customization.isDarkMode ? theme.palette.background.default : '#fff'
                                     }}

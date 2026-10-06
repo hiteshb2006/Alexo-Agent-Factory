@@ -1,4 +1,4 @@
-import { ExecutionsViewer, HumanInputParams } from '@flowiseai/observe'
+import { ExecutionsViewer, HumanInputParams } from '@alexocloudai/observe'
 import { Box, Typography } from '@mui/material'
 
 import { agentflowCanvasUrl, flowId } from '../config'

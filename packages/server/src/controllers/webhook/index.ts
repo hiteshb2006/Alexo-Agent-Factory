@@ -6,7 +6,7 @@ import predictionsServices from '../../services/predictions'
 import chatflowsService from '../../services/chatflows'
 import webhookService from '../../services/webhook'
 import { getWebhookListenerRegistry } from '../../services/webhook-listener'
-import { redactSensitiveHeaders } from 'flowise-components'
+import { redactSensitiveHeaders } from 'agentfactory-components'
 import { ChatType } from '../../Interface'
 import { InternalFlowiseError } from '../../errors/internalFlowiseError'
 import { dispatchCallback } from '../../utils/callbackDispatcher'
@@ -125,7 +125,7 @@ const createWebhook = async (req: Request, res: Response, next: NextFunction) =>
                         return // fire-and-forget — no delivery
                     }
 
-                    // apiResponse.action is the parsed humanInputAction — only present when flow is STOPPED (FLOWISE-387)
+                    // apiResponse.action is the parsed humanInputAction — only present when flow is STOPPED
                     if (apiResponse.action) {
                         await dispatchCallback(
                             callbackUrl,

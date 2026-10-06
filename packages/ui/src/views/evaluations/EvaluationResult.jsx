@@ -955,10 +955,10 @@ const EvalEvaluationRows = () => {
                                                                                                 : 'white',
                                                                                         backgroundColor:
                                                                                             evaluator.result === 'Pass'
-                                                                                                ? '#00c853'
+                                                                                                ? '#059669'
                                                                                                 : evaluator.result === 'Fail'
                                                                                                 ? '#ff1744'
-                                                                                                : '#ffe57f'
+                                                                                                : '#ffd166'
                                                                                     }}
                                                                                     variant={'contained'}
                                                                                     size='small'

@@ -1,7 +1,7 @@
-# @flowiseai/observe
+# @alexocloudai/observe
 
-[![Version](https://img.shields.io/npm/v/@flowiseai/observe)](https://www.npmjs.com/package/@flowiseai/observe)
-[![License](https://img.shields.io/badge/license-Apache--2.0-blue)](https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md)
+[![Version](https://img.shields.io/npm/v/@alexocloudai/observe)](https://www.npmjs.com/package/@alexocloudai/observe)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue)](https://github.com/hiteshb2006/Alexo-Agent-Factory/blob/main/LICENSE.md)
 
 > Embeddable React components for visualizing AI agent runtime observability — executions, evaluations, and more
 
@@ -19,9 +19,9 @@
 
 ## Overview
 
-`@flowiseai/observe` is the runtime observability SDK for Flowise. It provides embeddable React components for viewing execution traces, node-level step details, and human-in-the-loop interactions for AI agent workflows built with Flowise.
+`@alexocloudai/observe` is the runtime observability SDK for AgentFactory. It provides embeddable React components for viewing execution traces, node-level step details, and human-in-the-loop interactions for AI agent workflows built with AgentFactory.
 
-This is the "Observe" layer of the Build-Run-Observe trio alongside `@flowiseai/agentflow` (Build).
+This is the "Observe" layer of the Build-Run-Observe trio alongside `@alexocloudai/agentflow` (Build).
 
 ## Features
 
@@ -39,7 +39,7 @@ This is the "Observe" layer of the Build-Run-Observe trio alongside `@flowiseai/
 ## Installation
 
 ```bash
-pnpm add @flowiseai/observe
+pnpm add @alexocloudai/observe
 ```
 
 **Peer Dependencies:**
@@ -48,7 +48,7 @@ pnpm add @flowiseai/observe
 pnpm add react react-dom @mui/material @mui/icons-material @emotion/react @emotion/styled
 ```
 
-> Note: ReactFlow is **not** a peer dependency. `@flowiseai/observe` is a viewer only — no canvas.
+> Note: ReactFlow is **not** a peer dependency. `@alexocloudai/observe` is a viewer only — no canvas.
 
 ## Basic Usage
 
@@ -57,7 +57,7 @@ pnpm add react react-dom @mui/material @mui/icons-material @emotion/react @emoti
 Displays all executions across every agentflow. Pass `agentflowId` to scope the list to a single flow — useful when embedding next to a specific agentflow canvas.
 
 ```tsx
-import { ExecutionsViewer, ObserveProvider } from '@flowiseai/observe'
+import { ExecutionsViewer, ObserveProvider } from '@alexocloudai/observe'
 
 export default function App() {
     return (
@@ -77,7 +77,7 @@ export default function App() {
 Renders the full step viewer for a single execution by ID — useful for deep-linking into a specific trace.
 
 ```tsx
-import { ExecutionDetail, ObserveProvider } from '@flowiseai/observe'
+import { ExecutionDetail, ObserveProvider } from '@alexocloudai/observe'
 
 export default function App() {
     return (
@@ -90,12 +90,12 @@ export default function App() {
 
 ### With HITL Callback
 
-The `onHumanInput` callback is how the host application handles human-in-the-loop responses. The SDK delegates routing entirely to the consumer — OSS calls Flowise directly, DevSite routes through the AgentForge proxy.
+The `onHumanInput` callback is how the host application handles human-in-the-loop responses. The SDK delegates routing entirely to the consumer — OSS calls AgentFactory directly, DevSite routes through the AgentForge proxy.
 
 ```tsx
 <ExecutionsViewer
     onHumanInput={async (agentflowId, params) => {
-        // OSS: call Flowise prediction endpoint directly
+        // OSS: call AgentFactory prediction endpoint directly
         await fetch(`/api/v1/prediction/${agentflowId}`, {
             method: 'POST',
             headers: { Authorization: `Bearer ${token}` },
@@ -121,7 +121,7 @@ When `onHumanInput` is not provided, Approve/Reject buttons are not rendered. No
 </ObserveProvider>
 ```
 
-**OSS session auth** — embedding inside the Flowise UI where a session cookie already exists:
+**OSS session auth** — embedding inside the AgentFactory UI where a session cookie already exists:
 
 ```tsx
 <ObserveProvider
@@ -161,7 +161,7 @@ Root provider. Wraps `ExecutionsViewer` or `ExecutionDetail`. Injects the MUI th
 <!-- prettier-ignore -->
 | Prop                  | Type                                                                      | Default        | Description                                                                                   |
 | --------------------- | ------------------------------------------------------------------------- | -------------- | --------------------------------------------------------------------------------------------- |
-| `apiBaseUrl`          | `string`                                                                  | **(required)** | Flowise API server base URL                                                                   |
+| `apiBaseUrl`          | `string`                                                                  | **(required)** | AgentFactory API server base URL                                                                   |
 | `token`               | `string`                                                                  | —              | API key — sets `Authorization: Bearer <token>`. Optional when using `requestInterceptor`. |
 | `requestInterceptor`  | `(config: InternalAxiosRequestConfig) => InternalAxiosRequestConfig`     | —              | Customize outgoing requests. Runs after Bearer header is set — can extend or override it. See [Request Interceptor](#with-request-interceptor) below. |
 | `isDarkMode`          | `boolean`                                                                 | `false`        | Use dark mode theme                                                                           |
@@ -318,8 +318,8 @@ npm publish
 
 ## License
 
-Apache-2.0 — see the repository root [LICENSE.md](https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md) for details.
+Apache-2.0 — see the repository root [LICENSE.md](https://github.com/hiteshb2006/Alexo-Agent-Factory/blob/main/LICENSE.md) for details.
 
 ---
 
-Part of the [Flowise](https://github.com/FlowiseAI/Flowise) ecosystem
+Part of the [AgentFactory](https://github.com/hiteshb2006/Alexo-Agent-Factory) ecosystem

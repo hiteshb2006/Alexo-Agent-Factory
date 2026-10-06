@@ -11,8 +11,8 @@
 
 import { useRef, useState } from 'react'
 
-import type { AgentFlowInstance, ExecutionStatus, FlowData } from '@flowiseai/agentflow'
-import { Agentflow } from '@flowiseai/agentflow'
+import type { AgentFlowInstance, ExecutionStatus, FlowData } from '@alexocloudai/agentflow'
+import { Agentflow } from '@alexocloudai/agentflow'
 
 import { apiBaseUrl, token } from '../config'
 

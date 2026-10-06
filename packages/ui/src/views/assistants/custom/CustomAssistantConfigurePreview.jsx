@@ -1295,7 +1295,7 @@ const CustomAssistantConfigurePreview = () => {
                                                         mt: 1,
                                                         mb: 1,
                                                         borderRadius: 20,
-                                                        background: 'linear-gradient(45deg, #673ab7 30%, #1e88e5 90%)'
+                                                        background: 'linear-gradient(45deg, #7c3aed 30%, #6d28d9 90%)'
                                                     }}
                                                     variant='contained'
                                                     onClick={onSaveAndProcess}
@@ -1317,24 +1317,24 @@ const CustomAssistantConfigurePreview = () => {
                                                     chatflowConfig={{}}
                                                     theme={{
                                                         button: {
-                                                            backgroundColor: '#32353b',
+                                                            backgroundColor: '#1f2937',
                                                             iconColor: '#ffffff'
                                                         },
                                                         chatWindow: {
                                                             height: pageHeight(),
                                                             showTitle: true,
-                                                            backgroundColor: '#23262c',
+                                                            backgroundColor: '#121b2e',
                                                             title: '  Preview',
                                                             botMessage: {
-                                                                backgroundColor: '#32353b',
+                                                                backgroundColor: '#1f2937',
                                                                 textColor: '#ffffff'
                                                             },
                                                             userMessage: {
-                                                                backgroundColor: '#191b1f',
+                                                                backgroundColor: '#0b1220',
                                                                 textColor: '#ffffff'
                                                             },
                                                             textInput: {
-                                                                backgroundColor: '#32353b',
+                                                                backgroundColor: '#1f2937',
                                                                 textColor: '#ffffff'
                                                             },
                                                             footer: {
@@ -1353,7 +1353,7 @@ const CustomAssistantConfigurePreview = () => {
                                                     theme={{
                                                         button: {
                                                             backgroundColor: '#eeeeee',
-                                                            iconColor: '#333333'
+                                                            iconColor: '#1f2937'
                                                         },
                                                         chatWindow: {
                                                             height: pageHeight(),

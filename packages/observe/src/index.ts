@@ -1,5 +1,5 @@
 // ===========================================
-// @flowiseai/observe — Public API
+// @alexocloudai/observe — Public API
 // ===========================================
 
 // Root provider (required — wrap your app or page with this)

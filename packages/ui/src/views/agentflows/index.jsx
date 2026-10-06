@@ -310,7 +310,7 @@ const Agentflows = () => {
                                 background: customization.isDarkMode
                                     ? 'linear-gradient(135deg,rgba(165, 128, 6, 0.31) 0%, #ffcc802f 100%)'
                                     : 'linear-gradient(135deg, #fff8e17a 0%, #ffcc804a 100%)',
-                                color: customization.isDarkMode ? 'white' : '#333333',
+                                color: customization.isDarkMode ? 'white' : '#1f2937',
                                 fontWeight: 400,
                                 borderRadius: 2,
                                 gap: 1.5

@@ -332,12 +332,12 @@ curl -X POST ${baseURL}/api/v1/document-store/upsert/${dialogProps.storeId} \\
                         padding: 2,
                         mb: 3,
                         background: customization.isDarkMode
-                            ? 'linear-gradient(135deg, rgba(33, 150, 243, 0.2) 0%, rgba(33, 150, 243, 0.1) 100%)'
-                            : 'linear-gradient(135deg, rgba(33, 150, 243, 0.1) 0%, rgba(33, 150, 243, 0.05) 100%)',
-                        color: customization.isDarkMode ? 'white' : '#333333',
+                            ? 'linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(124, 58, 237, 0.1) 100%)'
+                            : 'linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%)',
+                        color: customization.isDarkMode ? 'white' : '#1f2937',
                         fontWeight: 400,
                         borderRadius: 2,
-                        border: `1px solid ${customization.isDarkMode ? 'rgba(33, 150, 243, 0.3)' : 'rgba(33, 150, 243, 0.2)'}`,
+                        border: `1px solid ${customization.isDarkMode ? 'rgba(124, 58, 237, 0.3)' : 'rgba(124, 58, 237, 0.2)'}`,
                         gap: 1.5
                     }}
                 >

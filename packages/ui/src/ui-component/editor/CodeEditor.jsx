@@ -22,7 +22,7 @@ export const CodeEditor = ({
 
     const customStyle = EditorView.baseTheme({
         '&': {
-            color: '#191b1f',
+            color: '#0b1220',
             padding: '10px'
         },
         '.cm-placeholder': {

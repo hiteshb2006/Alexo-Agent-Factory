@@ -1,7 +1,7 @@
 import { FLOWISE_METRIC_COUNTERS, IMetricsProvider } from '../Interface.Metrics'
 import express from 'express'
 import promClient, { Counter, Histogram, Registry } from 'prom-client'
-import { getVersion } from 'flowise-components'
+import { getVersion } from 'agentfactory-components'
 
 export class Prometheus implements IMetricsProvider {
     private app: express.Application
@@ -23,7 +23,7 @@ export class Prometheus implements IMetricsProvider {
     }
 
     async initializeCounters(): Promise<void> {
-        const serviceName: string = process.env.METRICS_SERVICE_NAME || 'FlowiseAI'
+        const serviceName: string = process.env.METRICS_SERVICE_NAME || 'AgentFactory'
         this.register.setDefaultLabels({
             app: serviceName
         })
@@ -58,20 +58,20 @@ export class Prometheus implements IMetricsProvider {
         // version, http_request_duration_ms, http_requests_total
         try {
             const versionGaugeCounter = new promClient.Gauge({
-                name: 'flowise_version_info',
-                help: 'Flowise version info.',
+                name: 'agentfactory_version_info',
+                help: 'AgentFactory version info.',
                 labelNames: ['version'],
                 registers: [this.register] // Explicitly set the registry
             })
 
             const { version } = await getVersion()
             versionGaugeCounter.set({ version: 'v' + version }, 1)
-            this.counters.set('flowise_version', versionGaugeCounter)
+            this.counters.set('agentfactory_version', versionGaugeCounter)
         } catch (error) {
             // If metric already exists, get it from the registry
-            const existingMetric = this.register.getSingleMetric('flowise_version')
+            const existingMetric = this.register.getSingleMetric('agentfactory_version')
             if (existingMetric) {
-                this.counters.set('flowise_version', existingMetric as promClient.Gauge<string>)
+                this.counters.set('agentfactory_version', existingMetric as promClient.Gauge<string>)
             }
         }
 
@@ -159,7 +159,7 @@ export class Prometheus implements IMetricsProvider {
             // and ensure they're only registered with our custom registry
             promClient.collectDefaultMetrics({
                 register: this.register,
-                prefix: 'flowise_' // Add a prefix to avoid conflicts
+                prefix: 'agentfactory_' // Add a prefix to avoid conflicts
             })
         }
 

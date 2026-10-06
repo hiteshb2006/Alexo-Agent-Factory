@@ -86,7 +86,7 @@ const FeatureCards = () => {
                         border: 1,
                         borderColor: theme.palette.grey[900] + 25,
                         borderRadius: 2,
-                        color: customization.isDarkMode ? theme.palette.common.white : '#333333',
+                        color: customization.isDarkMode ? theme.palette.common.white : '#1f2937',
                         cursor: 'pointer',
                         '&:hover': {
                             boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'

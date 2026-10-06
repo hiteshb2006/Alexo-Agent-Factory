@@ -292,7 +292,7 @@
                     "document": "",
                     "embeddings": "{{openAIEmbeddings_0.data.instance}}",
                     "recordManager": "",
-                    "pineconeIndex": "flowiseindex",
+                    "pineconeIndex": "agentfactoryindex",
                     "pineconeNamespace": "pinecone-form10k",
                     "pineconeTextKey": "",
                     "pineconeMetadataFilter": "{\"source\":\"apple\"}",

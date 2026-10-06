@@ -39,7 +39,7 @@ class Github_DocumentLoaders implements INode {
                 label: 'Repo Link',
                 name: 'repoLink',
                 type: 'string',
-                placeholder: 'https://github.com/FlowiseAI/Flowise'
+                placeholder: 'https://github.com/hiteshb2006/Alexo-Agent-Factory'
             },
             {
                 label: 'Branch',

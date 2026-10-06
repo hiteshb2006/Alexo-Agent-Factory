@@ -2423,7 +2423,7 @@ const ChatMessage = ({ open, chatflowid, isAgentCanvas, isDialog, previews, setP
                             sx={{
                                 mb: 2,
                                 borderRadius: 20,
-                                background: 'linear-gradient(45deg, #673ab7 30%, #1e88e5 90%)'
+                                background: 'linear-gradient(45deg, #7c3aed 30%, #6d28d9 90%)'
                             }}
                         >
                             {loading ? 'Submitting...' : 'Submit'}
@@ -2880,7 +2880,7 @@ const ChatMessage = ({ open, chatflowid, isAgentCanvas, isDialog, previews, setP
                                                             ) : (
                                                                 <IconVolume
                                                                     style={{ width: '20px', height: '20px' }}
-                                                                    color={customization.isDarkMode ? 'white' : '#1e88e5'}
+                                                                    color={customization.isDarkMode ? 'white' : '#6d28d9'}
                                                                 />
                                                             )}
                                                         </IconButton>
@@ -2990,7 +2990,7 @@ const ChatMessage = ({ open, chatflowid, isAgentCanvas, isDialog, previews, setP
                                     px: 2,
                                     border: '1px solid',
                                     borderRadius: 3,
-                                    backgroundColor: customization.isDarkMode ? '#32353b' : '#fafafa',
+                                    backgroundColor: customization.isDarkMode ? '#1f2937' : '#fafafa',
                                     borderColor: 'rgba(0, 0, 0, 0.23)',
                                     display: 'flex',
                                     alignItems: 'center',
@@ -3007,12 +3007,12 @@ const ChatMessage = ({ open, chatflowid, isAgentCanvas, isDialog, previews, setP
                                 <div className='recording-control-buttons-container'>
                                     <IconButton onClick={onRecordingCancelled} size='small'>
                                         <IconX
-                                            color={loading || !chatflowid ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#1e88e5'}
+                                            color={loading || !chatflowid ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#6d28d9'}
                                         />
                                     </IconButton>
                                     <IconButton onClick={onRecordingStopped} size='small'>
                                         <IconSend
-                                            color={loading || !chatflowid ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#1e88e5'}
+                                            color={loading || !chatflowid ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#6d28d9'}
                                         />
                                     </IconButton>
                                 </div>
@@ -3046,7 +3046,7 @@ const ChatMessage = ({ open, chatflowid, isAgentCanvas, isDialog, previews, setP
                                                 edge='start'
                                             >
                                                 <IconPhotoPlus
-                                                    color={getInputDisabled() ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#1e88e5'}
+                                                    color={getInputDisabled() ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#6d28d9'}
                                                 />
                                             </IconButton>
                                         </InputAdornment>
@@ -3060,7 +3060,7 @@ const ChatMessage = ({ open, chatflowid, isAgentCanvas, isDialog, previews, setP
                                                 edge='start'
                                             >
                                                 <IconPaperclip
-                                                    color={getInputDisabled() ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#1e88e5'}
+                                                    color={getInputDisabled() ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#6d28d9'}
                                                 />
                                             </IconButton>
                                         </InputAdornment>
@@ -3074,7 +3074,7 @@ const ChatMessage = ({ open, chatflowid, isAgentCanvas, isDialog, previews, setP
                                                 edge='start'
                                             >
                                                 <IconPhotoPlus
-                                                    color={getInputDisabled() ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#1e88e5'}
+                                                    color={getInputDisabled() ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#6d28d9'}
                                                 />
                                             </IconButton>
                                             <IconButton
@@ -3085,7 +3085,7 @@ const ChatMessage = ({ open, chatflowid, isAgentCanvas, isDialog, previews, setP
                                                 edge='start'
                                             >
                                                 <IconPaperclip
-                                                    color={getInputDisabled() ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#1e88e5'}
+                                                    color={getInputDisabled() ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#6d28d9'}
                                                 />
                                             </IconButton>
                                         </InputAdornment>
@@ -3105,7 +3105,7 @@ const ChatMessage = ({ open, chatflowid, isAgentCanvas, isDialog, previews, setP
                                             >
                                                 <IconMicrophone
                                                     className={'start-recording-button'}
-                                                    color={getInputDisabled() ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#1e88e5'}
+                                                    color={getInputDisabled() ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#6d28d9'}
                                                 />
                                             </IconButton>
                                         </InputAdornment>
@@ -3121,7 +3121,7 @@ const ChatMessage = ({ open, chatflowid, isAgentCanvas, isDialog, previews, setP
                                                     // Send icon SVG in input field
                                                     <IconSend
                                                         color={
-                                                            getInputDisabled() ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#1e88e5'
+                                                            getInputDisabled() ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#6d28d9'
                                                         }
                                                     />
                                                 )}
@@ -3139,7 +3139,7 @@ const ChatMessage = ({ open, chatflowid, isAgentCanvas, isDialog, previews, setP
                                                                     ? '#9e9e9e'
                                                                     : customization.isDarkMode
                                                                     ? 'white'
-                                                                    : '#1e88e5'
+                                                                    : '#6d28d9'
                                                             }
                                                         />
                                                     </IconButton>

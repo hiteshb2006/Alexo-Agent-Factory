@@ -384,15 +384,15 @@ const ChatflowConfigurationDialog = ({ show, isAgentCanvas, dialogProps, onCance
                                                     color: isActive ? 'primary.main' : isDark ? 'grey.300' : 'grey.700',
                                                     bgcolor: isActive
                                                         ? isDark
-                                                            ? 'rgba(33, 150, 243, 0.12)'
-                                                            : 'rgba(33, 150, 243, 0.06)'
+                                                            ? 'rgba(124, 58, 237, 0.12)'
+                                                            : 'rgba(124, 58, 237, 0.06)'
                                                         : 'transparent',
                                                     transition: 'all 0.15s ease',
                                                     '&:hover': {
                                                         bgcolor: isActive
                                                             ? isDark
-                                                                ? 'rgba(33, 150, 243, 0.16)'
-                                                                : 'rgba(33, 150, 243, 0.08)'
+                                                                ? 'rgba(124, 58, 237, 0.16)'
+                                                                : 'rgba(124, 58, 237, 0.08)'
                                                             : isDark
                                                             ? 'rgba(255,255,255,0.04)'
                                                             : 'rgba(0,0,0,0.03)'

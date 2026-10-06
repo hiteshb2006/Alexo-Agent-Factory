@@ -1,7 +1,7 @@
 {
-    "name": "flowise-components",
+    "name": "agentfactory-components",
     "version": "3.1.4",
-    "description": "Flowiseai Components",
+    "description": "AgentFactory Components",
     "main": "dist/src/index",
     "types": "dist/src/index.d.ts",
     "exports": {
@@ -24,10 +24,10 @@
         "test:coverage": "jest --coverage"
     },
     "keywords": [],
-    "homepage": "https://flowiseai.com",
+    "homepage": "https://alexocloudai.com",
     "author": {
-        "name": "Henry Heng",
-        "email": "henryheng@flowiseai.com"
+        "name": "AlexoCloudAI",
+        "email": "hello@alexocloudai.com"
     },
     "license": "SEE LICENSE IN LICENSE.md",
     "overrides": {

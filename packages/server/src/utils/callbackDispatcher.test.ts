@@ -3,7 +3,7 @@ import { createHmac } from 'crypto'
 const mockSecureAxiosRequest = jest.fn()
 const mockLoggerError = jest.fn()
 
-jest.mock('flowise-components', () => ({ secureAxiosRequest: mockSecureAxiosRequest }))
+jest.mock('agentfactory-components', () => ({ secureAxiosRequest: mockSecureAxiosRequest }))
 jest.mock('./logger', () => ({ error: mockLoggerError }))
 
 import { dispatchCallback } from './callbackDispatcher'
@@ -40,7 +40,7 @@ describe('dispatchCallback', () => {
         })
     })
 
-    it('includes X-Flowise-Signature header when secret is provided', async () => {
+    it('includes X-AgentFactory-Signature header when secret is provided', async () => {
         mockSecureAxiosRequest.mockResolvedValue({ status: 200 })
         const secret = 'my-secret'
         const body = JSON.stringify(PAYLOAD)
@@ -52,19 +52,19 @@ describe('dispatchCallback', () => {
                 url: URL,
                 data: body,
                 headers: expect.objectContaining({
-                    'X-Flowise-Signature': expectedSignature(body, secret)
+                    'X-AgentFactory-Signature': expectedSignature(body, secret)
                 })
             })
         )
     })
 
-    it('does not include X-Flowise-Signature when no secret is provided', async () => {
+    it('does not include X-AgentFactory-Signature when no secret is provided', async () => {
         mockSecureAxiosRequest.mockResolvedValue({ status: 200 })
 
         await dispatchCallback(URL, PAYLOAD)
 
         const call = mockSecureAxiosRequest.mock.calls[0]
-        expect(call[0].headers).not.toHaveProperty('X-Flowise-Signature')
+        expect(call[0].headers).not.toHaveProperty('X-AgentFactory-Signature')
     })
 
     it('retries on failure and succeeds on second attempt', async () => {

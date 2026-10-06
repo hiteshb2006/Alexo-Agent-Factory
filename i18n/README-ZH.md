@@ -1,189 +1,64 @@
-<!-- markdownlint-disable MD030 -->
+<!-- markdownlint-disable MD030 MD033 MD041 -->
 
 <p align="center">
-<img src="https://github.com/FlowiseAI/Flowise/blob/main/images/flowise_white.svg#gh-light-mode-only">
-<img src="https://github.com/FlowiseAI/Flowise/blob/main/images/flowise_dark.svg#gh-dark-mode-only">
+<img width="440" alt="AgentFactory" src="../images/agentfactory_by_alexocloudai_white.svg#gh-light-mode-only">
+<img width="440" alt="AgentFactory" src="../images/agentfactory_by_alexocloudai_dark.svg#gh-dark-mode-only">
 </p>
 
-[![发布说明](https://img.shields.io/github/release/FlowiseAI/Flowise)](https://github.com/FlowiseAI/Flowise/releases)
-[![Discord](https://img.shields.io/discord/1087698854775881778?label=Discord&logo=discord)](https://discord.gg/jbaHfsRVBW)
-[![Twitter关注](https://img.shields.io/twitter/follow/FlowiseAI?style=social)](https://twitter.com/FlowiseAI)
-[![GitHub星图](https://img.shields.io/github/stars/FlowiseAI/Flowise?style=social)](https://star-history.com/#FlowiseAI/Flowise)
-[![GitHub分支](https://img.shields.io/github/forks/FlowiseAI/Flowise?style=social)](https://github.com/FlowiseAI/Flowise/fork)
+<p align="center"><b>构建、编排并扩展 AI 智能体</b></p>
 
-[English](../README.md) | [繁體中文](./README-TW.md) | 简体中文 | [日本語](./README-JA.md) | [한국어](./README-KR.md)
+<div align="center">
 
-<h3>可视化构建 AI/LLM 流程</h3>
-<a href="https://github.com/FlowiseAI/Flowise">
-<img width="100%" src="https://github.com/FlowiseAI/Flowise/blob/main/images/flowise_agentflow.gif?raw=true"></a>
+[English](../README.md) | [繁體中文](./README-TW.md) | [简体中文](./README-ZH.md) | [日本語](./README-JA.md) | [한국어](./README-KR.md)
 
-## ⚡ 快速入门
+</div>
 
-下载并安装 [NodeJS](https://nodejs.org/en/download) >= 20.0.0
+<a href="https://alexocloudai.com">
+<img width="100%" alt="AgentFactory" src="../images/agentfactory_banner.png"></a>
 
-1. 安装 Flowise
-    ```bash
-    npm install -g flowise
-    ```
-2. 启动 Flowise
+## ⚡ 快速开始
 
-    ```bash
-    npx flowise start
-    ```
+需要 [Node.js](https://nodejs.org/en/download) 24 和 [PNPM](https://pnpm.io/installation)。
 
-3. 打开 [http://localhost:3000](http://localhost:3000)
+```bash
+git clone https://github.com/hiteshb2006/Alexo-Agent-Factory.git
+cd Alexo-Agent-Factory
+pnpm install
+pnpm build
+pnpm start
+```
+
+打开 [http://localhost:3000](http://localhost:3000)
 
 ## 🐳 Docker
 
-### Docker Compose
-
 1. 进入项目根目录下的 `docker` 文件夹
-2. 创建 `.env` 文件并指定 `PORT`（参考 `.env.example`）
-3. 运行 `docker compose up -d`
+2. 将 `.env.example` 复制为 `.env`
+3. 运行 `docker compose up -d`（首次会从源码构建 `alexocloudai/agentfactory` 镜像）
 4. 打开 [http://localhost:3000](http://localhost:3000)
-5. 可以通过 `docker compose stop` 停止容器
+5. 使用 `docker compose stop` 停止容器
 
-### Docker 镜像
-
-1. 本地构建镜像：
-    ```bash
-    docker build --no-cache -t flowise .
-    ```
-2. 运行镜像：
-
-    ```bash
-    docker run -d --name flowise -p 3000:3000 flowise
-    ```
-
-3. 停止镜像：
-    ```bash
-    docker stop flowise
-    ```
+```bash
+docker build -f docker/Dockerfile -t alexocloudai/agentfactory .
+docker run -d --name agentfactory -p 3000:3000 alexocloudai/agentfactory
+```
 
 ## 👨‍💻 开发者
 
-Flowise 在一个单一的代码库中有 3 个不同的模块。
-
--   `server`：用于提供 API 逻辑的 Node 后端
--   `ui`：React 前端
--   `components`：第三方节点集成
-
-### 先决条件
-
--   安装 [PNPM](https://pnpm.io/installation)
-    ```bash
-    npm i -g pnpm
-    ```
-
-### 设置
-
-1. 克隆仓库
-
-    ```bash
-    git clone https://github.com/FlowiseAI/Flowise.git
-    ```
-
-2. 进入仓库文件夹
-
-    ```bash
-    cd Flowise
-    ```
-
-3. 安装所有模块的依赖：
-
-    ```bash
-    pnpm install
-    ```
-
-4. 构建所有代码：
-
-    ```bash
-    pnpm build
-    ```
-
-5. 启动应用：
-
-    ```bash
-    pnpm start
-    ```
-
-    现在可以在 [http://localhost:3000](http://localhost:3000) 访问应用
-
-6. 用于开发构建：
-
-    - 在 `packages/ui` 中创建 `.env` 文件并指定 `VITE_PORT`（参考 `.env.example`）
-    - 在 `packages/server` 中创建 `.env` 文件并指定 `PORT`（参考 `.env.example`）
-    - 运行
-
-        ```bash
-        pnpm dev
-        ```
-
-    任何代码更改都会自动重新加载应用程序，访问 [http://localhost:8080](http://localhost:8080)
+仓库包含 `server`（后端 API 与 `agentfactory` 命令行）、`ui`（React 前端）、`components`（节点与第三方集成）、`api-documentation`（Swagger 文档）、`agentflow` / `observe`（可嵌入的 React SDK）。开发模式：分别在 `packages/ui` 和 `packages/server` 中根据 `.env.example` 创建 `.env`，然后运行 `pnpm dev`，访问 [http://localhost:8080](http://localhost:8080)
 
 ## 🌱 环境变量
 
-Flowise 支持不同的环境变量来配置您的实例。您可以在 `packages/server` 文件夹中的 `.env` 文件中指定以下变量。了解更多信息，请阅读[文档](https://github.com/FlowiseAI/Flowise/blob/main/CONTRIBUTING.md#-env-variables)
+在 `packages/server/.env` 中配置实例，完整列表见 [CONTRIBUTING-ZH.md](./CONTRIBUTING-ZH.md)。AgentFactory 专用变量使用 `AGENTFACTORY_` 前缀，旧的变量名仍然兼容。
 
 ## 📖 文档
 
-[Flowise 文档](https://docs.flowiseai.com/)
-
-## 🌐 自托管
-
-在您现有的基础设施中部署自托管的 Flowise，我们支持各种[部署](https://docs.flowiseai.com/configuration/deployment)
-
--   [AWS](https://docs.flowiseai.com/deployment/aws)
--   [Azure](https://docs.flowiseai.com/deployment/azure)
--   [Digital Ocean](https://docs.flowiseai.com/deployment/digital-ocean)
--   [GCP](https://docs.flowiseai.com/deployment/gcp)
--   <details>
-      <summary>其他</summary>
-
-    -   [Railway](https://docs.flowiseai.com/deployment/railway)
-
-        [![在 Railway 上部署](https://railway.app/button.svg)](https://railway.app/template/pn4G8S?referralCode=WVNPD9)
-
-    -   [Render](https://docs.flowiseai.com/deployment/render)
-
-        [![部署到 Render](https://render.com/images/deploy-to-render-button.svg)](https://docs.flowiseai.com/deployment/render)
-
-    -   [HuggingFace Spaces](https://docs.flowiseai.com/configuration/deployment/hugging-face)
-
-        <a href="https://huggingface.co/spaces/FlowiseAI/Flowise"><img src="https://huggingface.co/datasets/huggingface/badges/raw/main/open-in-hf-spaces-sm.svg" alt="HuggingFace Spaces"></a>
-
-    -   [Elestio](https://elest.io/open-source/flowiseai)
-
-        [![Deploy](https://pub-da36157c854648669813f3f76c526c2b.r2.dev/deploy-on-elestio-black.png)](https://elest.io/open-source/flowiseai)
-
-    -   [Sealos](https://template.sealos.io/deploy?templateName=flowise)
-
-        [![部署到 Sealos](https://sealos.io/Deploy-on-Sealos.svg)](https://template.sealos.io/deploy?templateName=flowise)
-
-    -   [RepoCloud](https://repocloud.io/details/?app_id=29)
-
-        [![部署到 RepoCloud](https://d16t0pc4846x52.cloudfront.net/deploy.png)](https://repocloud.io/details/?app_id=29)
-
-      </details>
-
-## ☁️ 云托管
-
-[开始使用云托管](https://flowiseai.com/)
+[docs.alexocloudai.com](https://docs.alexocloudai.com)
 
 ## 🙋 支持
 
-在[讨论区](https://github.com/FlowiseAI/Flowise/discussions)中随时提问、提出问题和请求新功能
-
-## 🙌 贡献
-
-感谢这些了不起的贡献者
-
-<a href="https://github.com/FlowiseAI/Flowise/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=FlowiseAI/Flowise" />
-</a>
-
-参见[贡献指南](CONTRIBUTING-ZH.md)。如果您有任何问题或问题，请在[Discord](https://discord.gg/jbaHfsRVBW)上与我们联系。
+欢迎在 [GitHub Discussions](https://github.com/hiteshb2006/Alexo-Agent-Factory/discussions) 提问或发送邮件至 [support@alexocloudai.com](mailto:support@alexocloudai.com)。
 
 ## 📄 许可证
 
-此代码库中的源代码在[Apache License Version 2.0 许可证](../LICENSE.md)下提供。
+本仓库源代码基于 [Apache License 2.0](../LICENSE.md) 提供（[LICENSE.md](../LICENSE.md) 顶部列出的目录除外，其采用单独的商业许可证）。AgentFactory 基于开源项目 Flowise（Apache 2.0）构建，原始版权声明保留在 [LICENSE.md](../LICENSE.md) 中。

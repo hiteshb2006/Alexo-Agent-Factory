@@ -2,8 +2,10 @@ import { Command, Flags } from '@oclif/core'
 import dotenv from 'dotenv'
 import path from 'path'
 import logger from '../utils/logger'
+import { applyLegacyEnvAliases, LEGACY_ENV_ALIASES } from '../utils/brandEnv'
 
 dotenv.config({ path: path.join(__dirname, '..', '..', '.env'), override: true })
+applyLegacyEnvAliases()
 
 enum EXIT_CODE {
     SUCCESS = 0,
@@ -13,7 +15,7 @@ enum EXIT_CODE {
 export abstract class BaseCommand extends Command {
     static flags = {
         // General Settings
-        FLOWISE_FILE_SIZE_LIMIT: Flags.string(),
+        AGENTFACTORY_FILE_SIZE_LIMIT: Flags.string(),
         CUSTOM_MCP_TOOLS_MAX_BYTES: Flags.string(),
         CUSTOM_MCP_AUTHORIZE_TIMEOUT_MS: Flags.string(),
         PORT: Flags.string(),
@@ -23,7 +25,7 @@ export abstract class BaseCommand extends Command {
         DEBUG: Flags.string(),
         NUMBER_OF_PROXIES: Flags.string(),
         SHOW_COMMUNITY_NODES: Flags.string(),
-        DISABLE_FLOWISE_TELEMETRY: Flags.string(),
+        DISABLE_AGENTFACTORY_TELEMETRY: Flags.string(),
         DISABLED_NODES: Flags.string(),
 
         // Logging
@@ -79,7 +81,7 @@ export abstract class BaseCommand extends Command {
         // Credentials / Secret Keys
         SECRETKEY_STORAGE_TYPE: Flags.string(),
         SECRETKEY_PATH: Flags.string(),
-        FLOWISE_SECRETKEY_OVERWRITE: Flags.string(),
+        AGENTFACTORY_SECRETKEY_OVERWRITE: Flags.string(),
         SECRETKEY_AWS_ACCESS_KEY: Flags.string(),
         SECRETKEY_AWS_SECRET_KEY: Flags.string(),
         SECRETKEY_AWS_REGION: Flags.string(),
@@ -145,7 +147,7 @@ export abstract class BaseCommand extends Command {
 
         // Enterprise
         LICENSE_URL: Flags.string(),
-        FLOWISE_EE_LICENSE_KEY: Flags.string(),
+        AGENTFACTORY_EE_LICENSE_KEY: Flags.string(),
         OFFLINE: Flags.string(),
 
         // Metrics
@@ -168,7 +170,10 @@ export abstract class BaseCommand extends Command {
         PLAYWRIGHT_EXECUTABLE_FILE_PATH: Flags.string(),
 
         // Schedule
-        MIN_SCHEDULE_INTERVAL_SECONDS: Flags.string()
+        MIN_SCHEDULE_INTERVAL_SECONDS: Flags.string(),
+
+        // Legacy variable names, still accepted (see utils/brandEnv.ts)
+        ...Object.fromEntries(Object.keys(LEGACY_ENV_ALIASES).map((legacyName) => [legacyName, Flags.string()]))
     }
 
     protected async stopProcess() {
@@ -180,13 +185,13 @@ export abstract class BaseCommand extends Command {
             try {
                 // Shut down the app after timeout if it ever stuck removing pools
                 setTimeout(async () => {
-                    logger.info('Flowise was forced to shut down after 30 secs')
+                    logger.info('AgentFactory was forced to shut down after 30 secs')
                     await this.failExit()
                 }, 30000)
 
                 await this.stopProcess()
             } catch (error) {
-                logger.error('There was an error shutting down Flowise...', error)
+                logger.error('There was an error shutting down AgentFactory...', error)
             }
         }
     }
@@ -221,5 +226,6 @@ export abstract class BaseCommand extends Command {
                 process.env[key] = flags[key]
             }
         })
+        applyLegacyEnvAliases()
     }
 }

@@ -87,7 +87,7 @@ const App = () => {
 
 export const defaultThemeConfig = {
     button: {
-        backgroundColor: '#3B81F6',
+        backgroundColor: '#7C3AED',
         right: 20,
         bottom: 20,
         size: 48,
@@ -109,7 +109,7 @@ export const defaultThemeConfig = {
     },
     disclaimer: {
         title: 'Disclaimer',
-        message: 'By using this chatbot, you agree to the <a target="_blank" href="https://flowiseai.com/terms">Terms & Condition</a>',
+        message: 'By using this chatbot, you agree to the <a target="_blank" href="https://alexocloudai.com/terms">Terms & Condition</a>',
         textColor: 'black',
         buttonColor: '#3b82f6',
         buttonText: 'Start Chatting',
@@ -121,7 +121,7 @@ export const defaultThemeConfig = {
     chatWindow: {
         showTitle: true,
         showAgentMessages: true,
-        title: 'Flowise Bot',
+        title: 'AgentFactory Bot',
         titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
         welcomeMessage: 'Hello! This is custom welcome message',
         errorMessage: 'This is a custom error message',
@@ -142,7 +142,7 @@ export const defaultThemeConfig = {
             avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png'
         },
         userMessage: {
-            backgroundColor: '#3B81F6',
+            backgroundColor: '#7C3AED',
             textColor: '#ffffff',
             showAvatar: true,
             avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png'
@@ -151,7 +151,7 @@ export const defaultThemeConfig = {
             placeholder: 'Type your question',
             backgroundColor: '#ffffff',
             textColor: '#303235',
-            sendButtonColor: '#3B81F6',
+            sendButtonColor: '#7C3AED',
             maxChars: 50,
             maxCharsWarningMessage: 'You exceeded the characters limit. Please input less than 50 characters.',
             autoFocus: true,
@@ -170,8 +170,8 @@ export const defaultThemeConfig = {
         footer: {
             textColor: '#303235',
             text: 'Powered by',
-            company: 'Flowise',
-            companyLink: 'https://flowiseai.com'
+            company: 'AgentFactory',
+            companyLink: 'https://alexocloudai.com'
         }
     }
 }

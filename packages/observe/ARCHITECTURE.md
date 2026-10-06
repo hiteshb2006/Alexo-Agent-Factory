@@ -1,10 +1,10 @@
-# @flowiseai/observe - Architecture
+# @alexocloudai/observe - Architecture
 
-This document describes the internal architecture of the `@flowiseai/observe` package.
+This document describes the internal architecture of the `@alexocloudai/observe` package.
 
 ## Overview
 
-The package follows a **Domain-Driven Modular Architecture** with clear separation of concerns — the same four-layer structure as `@flowiseai/agentflow`. The goal is to keep UI primitives, business logic, API communication, and domain features cleanly separated, so individual features (executions, evaluations, chat history) can be added, tested, and removed without disturbing each other.
+The package follows a **Domain-Driven Modular Architecture** with clear separation of concerns — the same four-layer structure as `@alexocloudai/agentflow`. The goal is to keep UI primitives, business logic, API communication, and domain features cleanly separated, so individual features (executions, evaluations, chat history) can be added, tested, and removed without disturbing each other.
 
 ```
 src/
@@ -231,13 +231,13 @@ infrastructure/
 
 The SDK sends `Authorization: Bearer <token>` by default. Different consumers authenticate differently:
 
-| Consumer                     | Auth mechanism                              | How to configure                                       |
-| ---------------------------- | ------------------------------------------- | ------------------------------------------------------ |
-| DevSite                      | AgentForge proxy headers                    | `requestInterceptor` to inject proxy token             |
-| OSS (embedded in Flowise UI) | Session cookie + `x-request-from: internal` | `requestInterceptor` to set `withCredentials` + header |
-| OSS (standalone / external)  | Flowise API key                             | `token` prop (default)                                 |
+| Consumer                          | Auth mechanism                              | How to configure                                       |
+| --------------------------------- | ------------------------------------------- | ------------------------------------------------------ |
+| DevSite                           | AgentForge proxy headers                    | `requestInterceptor` to inject proxy token             |
+| OSS (embedded in AgentFactory UI) | Session cookie + `x-request-from: internal` | `requestInterceptor` to set `withCredentials` + header |
+| OSS (standalone / external)       | AgentFactory API key                        | `token` prop (default)                                 |
 
-`requestInterceptor` is a callback on the Axios request config, identical in shape to the one in `@flowiseai/agentflow`:
+`requestInterceptor` is a callback on the Axios request config, identical in shape to the one in `@alexocloudai/agentflow`:
 
 ```ts
 interface ObserveBaseProps {
@@ -296,14 +296,14 @@ interface ExecutionsViewerProps {
 }
 ```
 
--   In OSS: consumer calls the Flowise prediction endpoint directly
+-   In OSS: consumer calls the AgentFactory prediction endpoint directly
 -   In DevSite: consumer routes through the AgentForge proxy
 
 The SDK never calls the prediction API itself. Approve/Reject buttons are only rendered when `onHumanInput` is provided AND the node is a human input node in INPROGRESS state. This keeps auth and routing logic entirely out of the SDK.
 
 ### Tenant Isolation
 
-Tenant isolation is handled server-side by Flowise's `ExtendRequestContextMiddleware` via request headers. The SDK does not accept or pass a `tenantId` prop — the API returns only what the authenticated token is permitted to see.
+Tenant isolation is handled server-side by AgentFactory's `ExtendRequestContextMiddleware` via request headers. The SDK does not accept or pass a `tenantId` prop — the API returns only what the authenticated token is permitted to see.
 
 ---
 

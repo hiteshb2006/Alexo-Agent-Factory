@@ -7,8 +7,8 @@
 
 import { useRef, useState } from 'react'
 
-import type { AgentFlowInstance, FlowData } from '@flowiseai/agentflow'
-import { Agentflow } from '@flowiseai/agentflow'
+import type { AgentFlowInstance, FlowData } from '@alexocloudai/agentflow'
+import { Agentflow } from '@alexocloudai/agentflow'
 import CssBaseline from '@mui/material/CssBaseline'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 

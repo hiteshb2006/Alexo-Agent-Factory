@@ -103,7 +103,7 @@ const Logs = () => {
 
     const customStyle = EditorView.baseTheme({
         '&': {
-            color: '#191b1f',
+            color: '#0b1220',
             padding: '10px',
             borderRadius: '15px'
         },

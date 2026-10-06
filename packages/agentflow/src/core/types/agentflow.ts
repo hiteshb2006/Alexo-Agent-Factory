@@ -33,7 +33,7 @@ export interface PaletteRenderProps {
 // ============================================================================
 
 export interface AgentflowProps {
-    /** Flowise API server endpoint (e.g., "https://flowise-url.com") */
+    /** AgentFactory API server endpoint (e.g., "https://agentfactory-url.com") */
     apiBaseUrl: string
 
     /** Authentication token for API calls */

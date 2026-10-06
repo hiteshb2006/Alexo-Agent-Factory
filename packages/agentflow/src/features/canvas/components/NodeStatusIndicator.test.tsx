@@ -13,7 +13,7 @@ jest.mock('@mui/material/styles', () => ({
             warning: { dark: '#e65100' },
             success: { dark: '#1b5e20' },
             info: { main: '#0288d1' },
-            primary: { dark: '#1565c0' }
+            primary: { dark: '#5b21b6' }
         }
     })
 }))

@@ -600,11 +600,11 @@ function EvaluationRunRow(props) {
     const getStatusColor = (status) => {
         switch (status) {
             case 'pending':
-                return '#ffc107'
+                return '#f5a524'
             case 'completed':
-                return '#52b69a'
+                return '#14d8c4'
             case 'error':
-                return '#f44336'
+                return '#ff6b6b'
             default:
                 return '#bcbcbc'
         }
@@ -612,11 +612,11 @@ function EvaluationRunRow(props) {
 
     const getPassRateColor = (passPcnt) => {
         if (passPcnt > 90) {
-            return '#52b69a'
+            return '#14d8c4'
         } else if (passPcnt >= 50) {
             return '#f48c06'
         } else {
-            return '#f44336'
+            return '#ff6b6b'
         }
     }
 

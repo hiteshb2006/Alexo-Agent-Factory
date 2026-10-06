@@ -7,8 +7,8 @@
 
 import { useRef, useState } from 'react'
 
-import type { AgentFlowInstance, FlowData, HeaderRenderProps, PaletteRenderProps } from '@flowiseai/agentflow'
-import { Agentflow } from '@flowiseai/agentflow'
+import type { AgentFlowInstance, FlowData, HeaderRenderProps, PaletteRenderProps } from '@alexocloudai/agentflow'
+import { Agentflow } from '@alexocloudai/agentflow'
 
 import { apiBaseUrl, token } from '../config'
 
@@ -56,7 +56,7 @@ function CustomHeader({ flowName, isDirty, onSave, onExport, onValidate }: Heade
                     style={{
                         padding: '8px 16px',
                         background:
-                            validationStatus === 'valid' ? '#4CAF50' : validationStatus === 'invalid' ? '#f44336' : 'rgba(255,255,255,0.2)',
+                            validationStatus === 'valid' ? '#4CAF50' : validationStatus === 'invalid' ? '#ff6b6b' : 'rgba(255,255,255,0.2)',
                         color: '#fff',
                         border: 'none',
                         borderRadius: '6px',

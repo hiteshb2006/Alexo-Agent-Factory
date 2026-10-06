@@ -1,18 +1,18 @@
 {
-    "name": "flowise",
+    "name": "agentfactory",
     "version": "3.1.4",
     "private": true,
-    "homepage": "https://flowiseai.com",
+    "homepage": "https://alexocloudai.com",
     "workspaces": [
         "packages/*",
-        "flowise",
+        "agentfactory",
         "ui",
         "components",
         "api-documentation"
     ],
     "scripts": {
         "build": "turbo run build",
-        "build:docker": "turbo run build --filter=!@flowiseai/agentflow --filter=!@flowiseai/observe",
+        "build:docker": "turbo run build --filter=!@alexocloudai/agentflow --filter=!@alexocloudai/observe",
         "build-force": "pnpm clean && turbo run build --force",
         "dev": "turbo run dev --parallel --no-cache",
         "start": "run-script-os",

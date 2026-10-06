@@ -93,16 +93,16 @@ const StyledEditorContent = styled(EditorContent)(({ theme, rows, disabled, isDa
             height: 0
         },
         // Set CSS custom properties for theme-aware styling based on the screenshot
-        '--code-bg': isDarkMode ? '#2d2d2d' : '#f5f5f5',
-        '--code-color': isDarkMode ? '#d4d4d4' : '#333333',
+        '--code-bg': isDarkMode ? '#1f2937' : '#f5f5f5',
+        '--code-color': isDarkMode ? '#d4d4d4' : '#1f2937',
         '--hljs-comment': isDarkMode ? '#6a9955' : '#6a9955',
         '--hljs-variable': isDarkMode ? '#9cdcfe' : '#d73a49', // Light blue for variables (var, i)
         '--hljs-number': isDarkMode ? '#b5cea8' : '#e36209', // Light green for numbers (1, 20, 15, etc.)
         '--hljs-string': isDarkMode ? '#ce9178' : '#22863a', // Orange/peach for strings ("FizzBuzz", "Fizz", "Buzz")
         '--hljs-title': isDarkMode ? '#dcdcaa' : '#6f42c1', // Yellow for function names (log)
         '--hljs-keyword': isDarkMode ? '#569cd6' : '#005cc5', // Blue for keywords (for, if, else)
-        '--hljs-operator': isDarkMode ? '#d4d4d4' : '#333333', // White/gray for operators (=, %, ==, etc.)
-        '--hljs-punctuation': isDarkMode ? '#d4d4d4' : '#333333' // White/gray for punctuation ({, }, ;, etc.)
+        '--hljs-operator': isDarkMode ? '#d4d4d4' : '#1f2937', // White/gray for operators (=, %, ==, etc.)
+        '--hljs-punctuation': isDarkMode ? '#d4d4d4' : '#1f2937' // White/gray for punctuation ({, }, ;, etc.)
     }
 }))
 

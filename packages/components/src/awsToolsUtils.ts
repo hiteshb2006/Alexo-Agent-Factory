@@ -121,7 +121,7 @@ export async function getAWSCredentialConfig(nodeData: INodeData, options: IComm
  * is present. It creates an STS client with the provided base credentials (or the SDK
  * default credential chain if none are supplied), then sends an `AssumeRoleCommand`.
  *
- * The session is named `FlowiseSession-{timestamp}` for CloudTrail audit traceability.
+ * The session is named `AgentFactorySession-{timestamp}` for CloudTrail audit traceability.
  * Temporary credentials are valid for 1 hour (the STS default).
  *
  * @param params - Parameters for the AssumeRole call
@@ -165,7 +165,7 @@ async function assumeRole(params: {
 
     const assumeRoleInput: AssumeRoleCommandInput = {
         RoleArn: roleArn,
-        RoleSessionName: `FlowiseSession-${Date.now()}`
+        RoleSessionName: `AgentFactorySession-${Date.now()}`
     }
 
     if (externalId) {

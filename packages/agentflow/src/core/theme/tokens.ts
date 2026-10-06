@@ -10,7 +10,7 @@
  *
  * Base palette and node type colors are duplicated in
  * packages/observe/src/core/theme/tokens.ts — keep in sync until
- * extracted to packages/shared-ui in FLOWISE-628. Agentflow extends
+ * extracted to packages/shared-ui in a follow-up. Agentflow extends
  * the shared base with ReactFlow + syntax highlight tokens, which stay here.
  */
 
@@ -21,69 +21,69 @@ const baseColors = {
     black: '#000',
 
     // Light mode grays
-    gray50: '#fafafa',
-    gray75: '#f5f5f5',
-    gray100: '#f8f9fa',
+    gray50: '#f5f7fb',
+    gray75: '#eef1f7',
+    gray100: '#f5f7fb',
     gray200: '#e2e2e2',
-    gray300: '#e0e0e0',
+    gray300: '#d3d9e4',
     gray400: '#bdbdbd',
     gray500: '#9e9e9e',
     gray600: '#757575',
     gray700: '#666',
-    gray800: '#333',
+    gray800: '#0b1220',
 
     // Dark mode grays
     lightBorderDefault: '#21212125',
     darkBorderDefault: 'rgba(255, 255, 255, 0.145)',
-    darkGray100: '#1a1a1a',
-    darkGray200: '#1a1a2e',
-    darkGray300: '#252525',
-    darkGray350: '#23262c',
-    darkGray400: '#2d2d2d',
-    darkGray450: '#32353b',
-    darkGray460: '#454c59',
-    darkGray500: '#404040',
-    darkBlueHover: '#233345',
-    darkGray600: '#525252',
+    darkGray100: '#0b1220',
+    darkGray200: '#111a2c',
+    darkGray300: '#121b2e',
+    darkGray350: '#121b2e',
+    darkGray400: '#172033',
+    darkGray450: '#1f2937',
+    darkGray460: '#2b2456',
+    darkGray500: '#26324a',
+    darkVioletHover: '#2b2456',
+    darkGray600: '#3a4660',
     darkGray700: '#555',
     darkGray750: '#888',
     darkGray800: '#aaa',
 
     // Status colors
     success: '#4caf50',
-    error: '#f44336',
+    error: '#ff6b6b',
     warning: '#ff9800',
     warningBg: '#fefcbf',
     warningText: '#744210',
-    info: '#2196f3',
+    info: '#7c3aed',
 
-    // MUI palette colors - primary (blue)
-    primaryLight: '#e3f2fd',
-    primaryMain: '#2196f3',
-    primaryDark: '#1e88e5',
+    // MUI palette colors - primary (Vivid Violet)
+    primaryLight: '#f1eafe',
+    primaryMain: '#7c3aed',
+    primaryDark: '#6d28d9',
 
-    // MUI palette colors - secondary (purple)
-    secondaryLight: '#ede7f6',
-    secondaryMain: '#673ab7',
-    secondaryDark: '#5e35b1',
-    darkSecondaryLight: '#454c59',
-    darkSecondaryMain: '#7c4dff',
+    // MUI palette colors - secondary (Electric Teal)
+    secondaryLight: '#e2fbf8',
+    secondaryMain: '#14d8c4',
+    secondaryDark: '#0c9f91',
+    darkSecondaryLight: '#2b2456',
+    darkSecondaryMain: '#2ee6d3',
     darkSecondaryDark: '#ffffff',
 
     // MUI palette colors - success (green)
-    successLight: '#cdf5d8',
-    successMain: '#00e676',
-    successDark: '#00c853',
+    successLight: '#d5f8e6',
+    successMain: '#10b981',
+    successDark: '#059669',
 
     // MUI palette colors - error (red)
-    errorLight: '#f3d2d2',
-    errorMain: '#f44336',
-    errorDark: '#c62828',
+    errorLight: '#ffe3e3',
+    errorMain: '#ff6b6b',
+    errorDark: '#e03e3e',
 
     // MUI palette colors - warning (yellow)
-    warningLight: '#fff8e1',
-    warningMain: '#ffe57f',
-    warningDark: '#ffc107',
+    warningLight: '#fff7e0',
+    warningMain: '#ffd166',
+    warningDark: '#f5a524',
 
     // Node type colors (brand colors)
     nodeCondition: '#FFB938',
@@ -139,7 +139,7 @@ export const tokens = {
             cardHover: { light: baseColors.gray75, dark: baseColors.darkGray500 },
             header: { light: baseColors.white, dark: baseColors.darkGray400 },
             input: { light: baseColors.gray50, dark: baseColors.darkGray450 },
-            optionHover: { light: '', dark: baseColors.darkBlueHover },
+            optionHover: { light: '', dark: baseColors.darkVioletHover },
             listItemSelected: { light: '', dark: baseColors.darkGray460 }
         },
 

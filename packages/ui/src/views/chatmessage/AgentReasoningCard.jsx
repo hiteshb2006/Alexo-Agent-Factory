@@ -27,7 +27,7 @@ const AgentReasoningCard = ({
                     border: customization.isDarkMode ? 'none' : '1px solid #e0e0e0',
                     borderRadius: `${customization.borderRadius}px`,
                     background: customization.isDarkMode
-                        ? `linear-gradient(to top, #303030, #212121)`
+                        ? `linear-gradient(to top, #26324a, #121b2e)`
                         : `linear-gradient(to top, #f6f3fb, #f2f8fc)`,
                     mb: 1
                 }}

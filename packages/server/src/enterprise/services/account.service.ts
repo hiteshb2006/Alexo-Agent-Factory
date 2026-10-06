@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs'
-import { removeFolderFromStorage } from 'flowise-components'
+import { removeFolderFromStorage } from 'agentfactory-components'
 import { StatusCodes } from 'http-status-codes'
 import jwt, { JwtPayload } from 'jsonwebtoken'
 import moment from 'moment'
@@ -845,7 +845,7 @@ export class AccountService {
 
         // Step 5: Anonymize User Record (GDPR Compliance)
         user.name = UserStatus.DELETED
-        user.email = `deleted_${user.id}_${Date.now()}@deleted.flowise`
+        user.email = `deleted_${user.id}_${Date.now()}@deleted.agentfactory`
         user.status = UserStatus.DELETED
         user.credential = null
         user.tokenExpiry = null

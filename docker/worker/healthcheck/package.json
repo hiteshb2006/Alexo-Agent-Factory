@@ -1,7 +1,7 @@
 {
-    "name": "flowise-worker-healthcheck",
+    "name": "agentfactory-worker-healthcheck",
     "version": "1.0.0",
-    "description": "Simple healthcheck server for Flowise worker",
+    "description": "Simple healthcheck server for AgentFactory worker",
     "main": "healthcheck.js",
     "private": true,
     "scripts": {

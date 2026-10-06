@@ -24,7 +24,7 @@ export default defineConfig(({ mode }) => {
         build: {
             lib: {
                 entry: resolve(__dirname, 'src/index.ts'),
-                name: 'FlowiseObserve',
+                name: 'AgentFactoryObserve',
                 formats: ['es', 'umd'],
                 fileName: (format) => `index.${format === 'es' ? 'js' : 'umd.js'}`
             },

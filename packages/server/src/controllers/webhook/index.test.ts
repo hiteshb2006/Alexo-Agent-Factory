@@ -47,7 +47,7 @@ jest.mock('../../utils/logger', () => ({
     __esModule: true,
     default: { error: jest.fn(), warn: jest.fn(), info: jest.fn(), debug: jest.fn() }
 }))
-jest.mock('flowise-components', () => ({
+jest.mock('agentfactory-components', () => ({
     redactSensitiveHeaders: (headers: Record<string, any> | null | undefined): Record<string, any> => {
         if (!headers) return {}
         const SENSITIVE = new Set([
@@ -284,7 +284,7 @@ describe('createWebhook', () => {
         )
     })
 
-    // --- Async callback (FLOWISE-367) ---
+    // --- Async callback ---
 
     it('returns 202 immediately when callbackUrl is configured on Start node', async () => {
         mockValidateWebhookChatflow.mockResolvedValue({ responseMode: 'async' as const, callbackUrl: 'https://cb.example.com' })

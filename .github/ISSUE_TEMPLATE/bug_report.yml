@@ -56,18 +56,18 @@ body:
       id: method
       attributes:
           label: Use Method
-          description: How did you use Flowise?
+          description: How did you use AgentFactory?
           options:
-              - Flowise Cloud
+              - AgentFactory Cloud
               - Docker
-              - npx flowise start
+              - npx agentfactory start
               - pnpm start
 
     - type: input
       id: version
       attributes:
-          label: Flowise Version
-          description: What version of Flowise are you running?
+          label: AgentFactory Version
+          description: What version of AgentFactory are you running?
           placeholder: e.g., 1.2.11
 
     - type: dropdown

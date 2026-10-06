@@ -253,9 +253,9 @@ describe('xmlTagUtils', () => {
         })
 
         it('should roundtrip HTML <a> links', () => {
-            const input = 'Visit <a href="https://flowiseai.com">Flowise</a> for docs'
+            const input = 'Visit <a href="https://alexocloudai.com">AgentFactory</a> for docs'
             const escaped = escapeXmlTags(input)
-            expect(escaped).toContain('&lt;a href="https://flowiseai.com"&gt;')
+            expect(escaped).toContain('&lt;a href="https://alexocloudai.com"&gt;')
             expect(unescapeXmlTags(escaped)).toBe(input)
         })
 
@@ -267,7 +267,7 @@ describe('xmlTagUtils', () => {
                 '- Be **concise**\n' +
                 '</instructions>\n\n' +
                 'See [docs](https://example.com) for more info.\n' +
-                'Also visit <a href="https://flowiseai.com">Flowise</a>.\n\n' +
+                'Also visit <a href="https://alexocloudai.com">AgentFactory</a>.\n\n' +
                 '```\ncode block\n```'
             const escaped = escapeXmlTags(input)
             expect(escaped).not.toBe(input)

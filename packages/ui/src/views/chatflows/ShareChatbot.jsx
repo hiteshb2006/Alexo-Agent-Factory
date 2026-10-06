@@ -28,20 +28,20 @@ const defaultConfig = {
     backgroundColor: '#ffffff',
     fontSize: 16,
     poweredByTextColor: '#303235',
-    titleBackgroundColor: '#3B81F6',
+    titleBackgroundColor: '#7C3AED',
     titleTextColor: '#ffffff',
     botMessage: {
         backgroundColor: '#f7f8ff',
         textColor: '#303235'
     },
     userMessage: {
-        backgroundColor: '#3B81F6',
+        backgroundColor: '#7C3AED',
         textColor: '#ffffff'
     },
     textInput: {
         backgroundColor: '#ffffff',
         textColor: '#303235',
-        sendButtonColor: '#3B81F6'
+        sendButtonColor: '#7C3AED'
     }
 }
 
@@ -467,13 +467,13 @@ const ShareChatbot = ({ isSessionMemory, isAgentCanvas }) => {
                 <Stack sx={{ mt: 1, mb: 2, alignItems: 'center' }} direction='row' spacing={2}>
                     <Typography variant='h4'>Title Settings</Typography>
                 </Stack>
-                {textField(title, 'title', 'Title', 'string', 'Flowise Assistant')}
+                {textField(title, 'title', 'Title', 'string', 'AgentFactory Assistant')}
                 {textField(
                     titleAvatarSrc,
                     'titleAvatarSrc',
                     'Title Avatar Link',
                     'string',
-                    `https://raw.githubusercontent.com/FlowiseAI/Flowise/main/assets/FloWiseAI_dark.png`
+                    `https://raw.githubusercontent.com/hiteshb2006/Alexo-Agent-Factory/main/assets/AgentFactory_icon.png`
                 )}
                 {colorField(titleBackgroundColor, 'titleBackgroundColor', 'Title Background Color')}
                 {colorField(titleTextColor, 'titleTextColor', 'Title TextColor')}
@@ -543,7 +543,7 @@ const ShareChatbot = ({ isSessionMemory, isAgentCanvas }) => {
                     borderRadius: 20,
                     marginBottom: 10,
                     marginTop: 10,
-                    background: 'linear-gradient(45deg, #673ab7 30%, #1e88e5 90%)'
+                    background: 'linear-gradient(45deg, #7c3aed 30%, #6d28d9 90%)'
                 }}
                 variant='contained'
                 onClick={() => onSave()}

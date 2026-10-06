@@ -1,7 +1,7 @@
 {
-    "name": "flowise-api",
+    "name": "agentfactory-api",
     "version": "1.0.3",
-    "description": "Flowise API documentation server",
+    "description": "AgentFactory API documentation server",
     "scripts": {
         "build": "tsc",
         "start": "node dist/index.js",
