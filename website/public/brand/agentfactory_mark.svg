@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 100" width="124" height="100" role="img" aria-label="AgentFactory">
+  <title>AgentFactory</title>
+  <defs>
+    <linearGradient id="afg" gradientUnits="userSpaceOnUse" x1="10" y1="90" x2="100" y2="10">
+      <stop offset="0" stop-color="#7C3AED"/>
+      <stop offset="0.55" stop-color="#4F7BEA"/>
+      <stop offset="1" stop-color="#14D8C4"/>
+    </linearGradient>
+    <linearGradient id="afgBar" gradientUnits="userSpaceOnUse" x1="56" y1="0" x2="110" y2="0">
+      <stop offset="0" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#14D8C4"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(2 0)">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 84 L52 16" stroke="url(#afg)" stroke-width="15"/>
+      <path d="M52 16 L74 58" stroke="url(#afg)" stroke-width="15"/>
+      <path d="M34 60 L56 60" stroke="url(#afg)" stroke-width="12"/>
+      <path d="M74 58 L84 78" stroke="#14D8C4" stroke-width="12"/>
+      <path d="M66 22 L98 22" stroke="url(#afgBar)" stroke-width="14"/>
+      <path d="M70 44 L96 44" stroke="url(#afgBar)" stroke-width="13"/>
+    </g>
+    <circle cx="16" cy="84" r="12" fill="#7C3AED"/>
+    <circle cx="16" cy="84" r="5" fill="#FFFFFF"/>
+    <circle cx="58" cy="60" r="9" fill="#5B6CF0"/>
+    <circle cx="58" cy="60" r="3.6" fill="#FFFFFF"/>
+    <circle cx="87" cy="83" r="12" fill="#14D8C4"/>
+    <circle cx="87" cy="83" r="5" fill="#FFFFFF"/>
+    <circle cx="106" cy="20" r="12" fill="#14D8C4"/>
+    <circle cx="106" cy="20" r="5" fill="#FFFFFF"/>
+  </g>
+</svg>
